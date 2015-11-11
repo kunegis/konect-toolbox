@@ -7,8 +7,8 @@ http://konect.uni-koblenz.de/
 
 ## Installation
 
-The toolbox consists entirely of *.m files.  To use it, add this
-directory to the Matlab path, e.g., using addpath().  
+The toolbox consists entirely of *.m files.  To use it, add the
+directory m/ to the Matlab path, e.g., using addpath().  
 
 ## Requirements
 
