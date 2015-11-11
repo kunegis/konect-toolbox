@@ -1,0 +1,31 @@
+#! /bin/sh
+#
+# Execute an Octave script.  This is unused at the moment. 
+#
+# 	$1	Name of the Octave program
+#
+
+[ "$PREFIX" ] && PREFIX=.$PREFIX
+LOGNAME=$USER."`basename $1 .m`"
+
+# This is a list of variable we want to be used in the log filename to
+# make it unique.
+[ "$TYPE"    ]     	&& LOGNAME=$LOGNAME.$TYPE
+[ "$NAME"   ]      	&& LOGNAME=$LOGNAME.$NAME
+[ "$NORM"   ]      	&& LOGNAME=$LOGNAME.$NORM
+[ "$DATASET" ]		&& LOGNAME=$LOGNAME.$DATASET
+[ "$NETWORK" ]		&& LOGNAME=$LOGNAME.$NETWORK
+[ "$DECOMPOSITION" ]	&& LOGNAME=$LOGNAME.$DECOMPOSITION
+
+export LOG=${TMP-/tmp}/`basename $0`.$LOGNAME$PREFIX.log 
+echo >&2 "   $LOG"
+
+#
+# -q	Quiet
+# -f	Don't read initialization files
+#
+# We'd like to usee --no-window-system but it isn't supported by Octave 3.0 
+#
+DISPLAY= GNUTERM=dumb exec octave -qf $1 >$LOG 2>&1
+
+
