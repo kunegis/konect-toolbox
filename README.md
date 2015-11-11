@@ -22,7 +22,7 @@ Installation of BGL:
 
 ## License
 
-Written by Jérome Kunegis at the University of Koblenz-Landau.
+Written by Jérôme Kunegis at the University of Koblenz-Landau.
 
 The KONECT Toolbox is free software: you can redistribute it and/or modify it under the
 terms of the GNU General Public License as published by the Free
