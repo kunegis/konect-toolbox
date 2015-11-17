@@ -24,12 +24,6 @@
 %	D	(r*r) Eigenvalues of the matrix D^-1 A
 %	V	(n*r) Right eigenvectors of the matrix D^-1 A
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [U D V] = konect_decomposition_stoch1(A, r, format, weights, opts)
 

@@ -6,12 +6,6 @@
 %	A struct containing all constants as fields, with all-uppercase
 %	names; see below
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [consts symbols_format symbols_weights] = konect_consts()
 

@@ -9,12 +9,6 @@
 % PARAMETERS 
 %	v	Array of values, e.g. degree values 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [gini r_x r_y] = konect_gini_direct(v)
 

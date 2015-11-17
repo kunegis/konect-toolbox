@@ -16,12 +16,6 @@
 %	values	Column vector of results
 %		[1] Number of 2-stars
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_twostars(A, format, weights, opts)
 

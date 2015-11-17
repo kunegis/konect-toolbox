@@ -31,12 +31,6 @@
 % [2] http://tuvalu.santafe.edu/~aaronc/powerlaws/
 %     Visited on 2014-10-16
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [values] = konect_power_law_range(A, weights, enable_p)
 

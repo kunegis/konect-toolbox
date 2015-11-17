@@ -23,12 +23,6 @@
 %		[5]	Average unique left degree (BIP)
 %		[6]	Average unique right degree (BIP)
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_avgdegree(A, format, weights)
 

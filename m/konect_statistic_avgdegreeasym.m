@@ -16,12 +16,6 @@
 %	[5]	average outdegree (not ignoring 0-nodes)
 %	[6]	average indegree (not ignoring 0-nodes)
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 % ATTRIBUTE:  asym 
 %
 

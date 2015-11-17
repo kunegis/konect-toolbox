@@ -12,12 +12,6 @@
 %		[2]	Max outdegree (ASYM); max left degree (BIP)
 %		[3]	Max indegree (ASYM); max right degree (BIP) 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_maxdegree(A, format, weights)
 

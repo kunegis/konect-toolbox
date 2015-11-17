@@ -11,12 +11,6 @@
 %		defaults to 0.9; pass 0.5 and use floor() on the
 %		result to get the median path length
 %	
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [value] = konect_diameff(d, p)
 

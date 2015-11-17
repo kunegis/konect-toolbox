@@ -13,12 +13,6 @@
 %	m		Number of 1s in TARGET
 %	n		length of both input vectors
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [h m n] =  konect_roc_curve(target, score, color, line_style, line_width)
 

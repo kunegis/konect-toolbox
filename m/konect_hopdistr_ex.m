@@ -22,13 +22,6 @@
 %	size_chunk	(optional) Size of chunks used; the choice of
 %			this value only influences the runtime of the
 %			function, not the result 
-%
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [d eccentricities] = konect_hopdistr_ex(A, format, size_chunk)
 

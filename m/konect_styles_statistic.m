@@ -9,11 +9,6 @@
 %	markers			Struct by statistic
 %		.(statistic)	(string) marker 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.1.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under the GPLv3, see COPYING.
-%
 
 function [colors line_styles markers] = konect_styles_statistic()
 

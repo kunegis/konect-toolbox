@@ -6,12 +6,6 @@
 %	maxdiff
 %	label_measure
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function konect_significance_legend_bw(p_threshold, maxdiff, label_measure)
 
@@ -31,10 +25,6 @@ p_min = 0;
 p_max = range_p * p_threshold; 
 d_max = 2 * range_diff * maxdiff;
 d_min = - d_max; 
-
-%I = konect_significance_image(ones(r,1) * v_p, v_d' * ones(1,r), p_threshold, maxdiff); 
-
-%image([min(v_p), max(v_p)], [min(v_d), max(v_d)], I);
 
 hold on;
 axis([p_min p_max d_min d_max]); 
@@ -56,15 +46,6 @@ for i = 1 : r
               (d_min + (d_max - d_min) / r * (j - 1/2 + (1/2) * len * sin(theta)))], ...
              'Color', [1 1 1] * min(1, p / p_threshold), ...
              'LineWidth', line_width);
-
-        % d = sign(d) * min(abs(d), maxdiff); 
-        % x = d / maxdiff / 2;
-        % line([(p_min + (i-1) * (p_max - p_min) / r) ...
-        %       (p_min + (i) * (p_max - p_min) / r)], ...
-        %      [(d_min + (j-1/2-x) * (d_max - d_min) / r) ...
-        %       (d_min + (j-1/2+x) * (d_max - d_min) / r)], ...
-        %      'Color', [1 1 1] * min(1, p / p_threshold), ...
-        %      'LineWidth', 2);
     end
 end
 

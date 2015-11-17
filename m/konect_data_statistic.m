@@ -13,12 +13,6 @@
 %	integer		Whether the statistic is an integer 
 %	percent		Whether the statistic is between 0 and 1
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [logarithmic integer percent] = konect_data_statistic()
 

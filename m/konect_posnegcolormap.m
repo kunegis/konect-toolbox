@@ -2,12 +2,6 @@
 % From a matrix of numbers to be displayed using imagesc(), generate
 % a colormap such that white=0, green>0 and red<0. 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [colormap_a] = konect_posnegcolormap(matrix)
 

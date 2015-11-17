@@ -59,13 +59,7 @@
 %			and BIP for nonsquare matrices
 %	weights		(optional) How to interpret values in A; default is POSITIVE
 %	opts		(optional) Options; all are optional
-%		.disp		Passed directly to eigs() and svds() 
-%
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
+%	.disp		Passed directly to eigs() and svds() 
 %
 
 function [U D V d_u d_v n] = konect_decomposition(decomposition, A, r, format, weights, opts)

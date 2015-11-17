@@ -19,12 +19,6 @@
 %	[2] lambda_min
 %	[3] lambda_max
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_nonbip(A, format, weights)
 

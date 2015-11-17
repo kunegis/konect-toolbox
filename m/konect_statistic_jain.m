@@ -14,12 +14,6 @@
 %		[3]	Right value (BIP)
 %		[3]	Indegree value (ASYM)
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_jain(A, format, weights)
 

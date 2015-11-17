@@ -12,12 +12,6 @@
 %	from	(k) Indexes of first item in each chunk
 %	to	(k) Indexes of last item in each chunk 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [k from to] = konect_fromto(a, b, n)
 

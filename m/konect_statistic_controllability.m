@@ -11,12 +11,6 @@
 %		[1] The controllability (C)
 %		[2] The relative controllability (C / |V|)
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_controllability(A, format, weights)
 

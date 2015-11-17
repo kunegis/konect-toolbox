@@ -12,35 +12,18 @@
 %	allow_disconnected (default = 0) Whether to allow
 %		disconnected networks.  N must be given. 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [value] = konect_diammean(data, n, allow_disconnected)
 
 % Make DATA a column vector 
 data = data(:)
-%if size(data,1) < size(data,2)
-%    data = data'; 
-%end
 
 if ~exist('allow_disconnected', 'var')
     allow_disconnected = 0; 
 end
 
-%if ~exist('n', 'var')
-%    n = round(sqrt(data(end))); 
-%end
-
 values = (0 : (length(data) - 1))'
 counts = data - [0 ; data(1:end-1)]
-%values = (0 : (length(data) - 1))'; 
-%counts = data - [0; data(1:end-1)]; 
-
-%assert(sum(counts) <= n*n); 
 
 if ~allow_disconnected
     % This is not necessarily true as DATA may be an estimation 

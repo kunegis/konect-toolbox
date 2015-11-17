@@ -22,12 +22,6 @@
 % REFERENCES 
 %	Lu, Linyuan; Zhou, Tao. Link Prediction in Complex Networks:
 %	A Survey. Physica A, 390(6), pp. 1150--1170, 2011. 
-% 
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
 %
 
 function [prediction] = konect_predict_neib(type, A, E, format, variant)

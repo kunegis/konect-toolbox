@@ -4,7 +4,7 @@
 %
 % PARAMETERS 
 %	A       (n*n) Asymmetric adjacency matrix of directed graph 
-%	alpha   Amount of teleportation to do 
+%	alpha   Amount of teleportation to do, e.g., 0.2
 %	opts    (optional) Options to eigs() 
 %
 % RESULTS 

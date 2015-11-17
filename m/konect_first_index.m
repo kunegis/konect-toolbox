@@ -10,12 +10,6 @@
 % RESULT 
 %	first	Index of first usable latent dimension; 1 or 2
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function first = konect_first_index(decomposition, D)
 

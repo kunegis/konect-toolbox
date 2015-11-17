@@ -11,12 +11,6 @@
 %	B	Biadjacency matrix of bipartite graph (i.e., 
 % 		[0 B;B' 0] is the actual adjacency matrix.)
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [v, w] = konect_connect_bipartite(B)
 

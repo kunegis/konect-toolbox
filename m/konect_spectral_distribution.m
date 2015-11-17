@@ -16,12 +16,6 @@
 % 	begins	(k*1) The starts of each bin
 % 	ends	(k*1) The ends of each bin 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [counts, begins, ends] = konect_spectral_distribution(A, decomposition, format, k, varargin)
 
@@ -41,25 +35,11 @@ if strcmp(decomposition, 'sym')
 
     A = konect_matrix('symfull', A, format); 
 
-    % if format == consts.SYM | format == consts.ASYM
-    %     A = A + A'; 
-    % elseif format == consts.BIP
-    %     A = konect_matrix('bip', A); 
-    % end
-
 elseif strcmp(decomposition, 'sym-n')
     
     A = konect_matrix('sym-nfull', A, format);
 
     bounds = [ -1, +1 ]; 
-
-    % if format == consts.SYM | format == consts.ASYM
-    %     A = A + A'; 
-    %     A = konect_matrix('svd-n', A);  
-    % elseif format == consts.BIP
-    %     A = konect_matrix('svd-n', A);
-    %     A = konect_matrix('bip', A); 
-    % end
 
 elseif strcmp(decomposition, 'lap')
     A = konect_matrix(decomposition, A, format); 

@@ -13,12 +13,6 @@
 %		for bipartite graph:  power_a, sigma_a, power_u, sigma_u, power_v, sigma_v
 %		for POSITIVE graphs, append the same on the underlying UNWEIGHTED network
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function values = konect_statistic_power(A, format, weights)
 

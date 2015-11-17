@@ -33,12 +33,6 @@
 %			defined as the average local clustering
 %			coefficient; usually not used in KONECT 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [c_local, c_global_1, c_global_2] = konect_clusco(A)
 

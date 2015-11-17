@@ -17,12 +17,6 @@
 %	U	(n*r) Eigenvector matrix
 %	D	(r*r) Nondiagonal and asymmetric eigenvalue matrix 
 %
-% ABOUT 
-%	This file is part of the KONECT Matlab Toolbox version 0.3.
-%	konect.uni-koblenz.de
-%	(c) Jerome Kunegis 2014; this is Free Software released under
-%	the GPLv3, see COPYING. 
-%
 
 function [U D] = konect_decomposition_dedicom3(A, r, enable_alpha, opts)
 
