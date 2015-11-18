@@ -10,8 +10,13 @@
 % RESULT 
 %	value	The negativity (in the range [0,1])
 %
+% ATTRIBUTE:  negative
+%
 
 function value = konect_statistic_negativity(A, format, weights)
+
+assert(weights == consts.SIGNED | weights == consts.MULTISIGNED | ...
+       weights == consts.WEIGHTED | weights == consts.MULTIWEIGHTED); 
 
 m = nnz(A);
 m_negative = nnz(A < 0);
