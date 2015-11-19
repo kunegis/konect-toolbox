@@ -125,6 +125,7 @@ elseif strcmp(statistic, 'cocorelinv')		ret = 'Inv. Rel. LCC ($N_{inv}$)';
 elseif strcmp(statistic, 'degone')		ret = 'Proportion of degree-one nodes ($d_1$)';
 elseif strcmp(statistic, 'diameff50'),		ret = '50-percentile effective diameter ($\delta_{0.5}$) [edges]'; 
 elseif strcmp(statistic, 'diameff90'), 		ret = '90-percentile effective diameter ($\delta_{0.9}$) [edges]'; 
+elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)'; 
     
 else
     error(sprintf('*** Invalid statistic %s', statistic)); 

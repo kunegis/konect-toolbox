@@ -102,6 +102,7 @@ logarithmic.cocorelinv		= 1;
 logarithmic.degone		= 1;
 logarithmic.diameff50		= 1;
 logarithmic.diameff90		= 1;
+logarithmic.dconflict		= 0;
 
 integer.size 			= 1;
 integer.size_2 			= 1;
@@ -190,6 +191,7 @@ integer.cocorelinv		= 0;
 integer.degone			= 0;
 integer.diameff50		= 0;
 integer.diameff90		= 0;
+integer.dconflict		= 0;
 
 percent.gini 			= 1;
 percent.clusco			= 1;
@@ -213,3 +215,4 @@ percent.cocorelinv		= 1;
 percent.degone			= 0;
 percent.diameff50		= 0;
 percent.diameff90		= 0;
+percent.dconflict		= 1; 

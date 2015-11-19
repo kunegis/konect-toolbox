@@ -14,8 +14,12 @@
 %	values	Column vector of results
 %		[1] \eta
 %
+% ATTRIBUTE:  asymnegative
+%
 
 function values = konect_statistic_dconflict(A, format, weights)
+
+consts = konect_consts(); 
 
 assert(format == consts.ASYM);
 assert(weights == consts.SIGNED | weights == consts.MULTISIGNED | ...
@@ -27,9 +31,10 @@ assert(m == n);
 
 A_abs = konect_absx(A); 
 
-m = nnz(A_abs & A_abs')
+m_dyads = nnz(A_abs & A_abs')
 
 m_conflict = nnz((A > 0) & (A' < 0))
 
 values = [ (m_conflict / m_dyads) ]
+
 
