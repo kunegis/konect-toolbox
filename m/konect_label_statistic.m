@@ -79,6 +79,7 @@ elseif strcmp(statistic, 'gini')		ret = 'Gini coefficient ($G$)';
 elseif strcmp(statistic, 'controllability')	ret = 'Driver node count ($N_D$) [vertices]';
 elseif strcmp(statistic, 'controllabilityn')	ret = 'Relative driver node count ($C_r$) [vertices]';
 elseif strcmp(statistic, 'conflict')		ret = 'Algebraic conflict ($\xi$)';
+elseif strcmp(statistic, 'conflict_2')		ret = 'Relative relaxed frustration ($\xi n / 8 m$)';
 elseif strcmp(statistic, 'conflictn')		ret = 'Normalized algebraic conflict ($\xi_n$)';
 elseif strcmp(statistic, 'runtime')		ret = 'Runtime [s]'; 
 elseif strcmp(statistic, 'asymmetry')		ret = 'Spectral asymmetry ($\zeta$)'; 

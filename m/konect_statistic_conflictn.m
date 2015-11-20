@@ -1,8 +1,11 @@
 %
-% Compute the normalized algebraic conflict [conflictn].
+% Compute the normalized algebraic conflict [conflictn].  This is
+% related to the spectrum of the normalized Laplacian, and not just a
+% normalization of the regular conflict, which is related to the
+% spectrum of the regular Laplacian. 
 %
 % PARAMETERS 
-%	a	Adjacency of biadjacency matrix
+%	A	Adjacency of biadjacency matrix
 %	format
 % 	weight
 %
@@ -10,10 +13,10 @@
 %	values	Normalized algebraic conflict; 0 for unweighted networks
 %
 
-function values = konect_statistic_conflictn(a, format, weights)
+function values = konect_statistic_conflictn(A, format, weights)
 
 opts.disp = 2; 
 
-[u d] = konect_decomposition('sym-n', a, 1, format, weights, opts);
+[U D] = konect_decomposition('sym-n', A, 1, format, weights, opts);
 
-values = 1 - d(1,1); 
+values = 1 - D(1,1); 

@@ -3,18 +3,21 @@
 % The original matrix can be recovered using konect_connect_back(). 
 %
 % RESULT 
-%	Bs	Biadjacency matrix of largest connected component
-%	cc1/cc2	0/1 vector of chosen left/right subset
-%	n	Total number of nodes in the found component 
+%	Bs		(nx1*nx2) Biadjacency matrix of largest connected component
+%	cc1, cc2	(nx1, nx2) 0/1 vector of chosen left/right subset
+%	n		Number of nodes in the found component (n = n1 + n2)
+%	n1		Number of left nodes in the found component
+%	n2		Number of right nodes in the found component 
 %
 % PARAMETERS 
-%	B	Biadjacency matrix
+%	B		(n1*n2) Biadjacency matrix
 %
 
-function [Bs cc1 cc2 n] = konect_connect_matrix_bipartite(B)
+function [Bs cc1 cc2 n n1 n2] = konect_connect_matrix_bipartite(B)
 
 [cc1 cc2] = konect_connect_bipartite(B);
 
 Bs = B(cc1, cc2); 
 
-n = sum(size(Bs));
+[n1 n2] = size(Bs); 
+n = n1 + n2;
