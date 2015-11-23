@@ -1,14 +1,14 @@
 %
 % Construct a characteristic graph matrix, given the adjacency or
 % biadjacency matrix of a graph.  The returned matrix corresponds to the
-% matrix used the corresponding decomposition. 
+% matrix used in the corresponding decomposition. 
 %
 % For decompositions which are only applied to the largest connected
 % component, this functions does not return a matrix restricted to
-% that set of nodes. 
+% that set of nodes; callers must do this instead. 
 %
-% In addition to the usual decompositions, the argument DECOMPOSITION
-% can be:
+% In addition to the matrix decompositions defined by KONECT, the
+% argument DECOMPOSITION can be:
 %
 %	'bip'		The bipartite double cover, i.e., return 
 %			[0 A; A' 0]
@@ -20,12 +20,6 @@
 %	'sym-nfull'	The full symmetric adjacency matrix
 %			corresponding to 'sym-n'
 %
-% RESULT 
-%	B		(n1*n2) The matrix corresponding to the given
-%			decomposition; sparse 
-%	d_u,d_v		(n1*1, n2*1) Normalization factors; [] if no
-%			normalization is performed 
-%
 % PARAMETERS 
 %	decomposition	Decomposition name, e.g., 'lap'
 %	A		(n1*n2) Adjacency or biadjacency matrix; sparse
@@ -35,6 +29,12 @@
 %			is WEIGHTED.  This parameter is ignored for
 %			most decompositions 
 %	opts		(optional) Passed to eigs()/svds()
+%
+% RESULT 
+%	B		(n1*n2) The matrix corresponding to the given
+%			decomposition; sparse 
+%	d_u,d_v		(n1*1, n2*1) Normalization factors; [] if no
+%			normalization is performed 
 %
 
 function [B d_u d_v] = konect_matrix(decomposition, A, format, weights, opts)
