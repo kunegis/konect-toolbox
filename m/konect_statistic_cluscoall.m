@@ -19,6 +19,14 @@
 %			clustering coefficients]
 %
 % ATTRIBUTE:  square 
+% ATTRIBUTE+3:  squarenegative
+% ATTRIBUTE+4:  squarenegative
+% ATTRIBUTE+5:  squarenegative
+% ATTRIBUTE+6:  squarenegative
+% ATTRIBUTE+9:  squarenegative
+% ATTRIBUTE+10:  squarenegative
+% ATTRIBUTE+11:  squarenegative
+% ATTRIBUTE+12:  squarenegative
 %
 
 function values = konect_statistic_cluscoall(A, format, weights)
