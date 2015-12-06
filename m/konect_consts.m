@@ -15,7 +15,7 @@ consts = {};
 % Format
 %
 consts.SYM  = 1;  % Undirected network; adjacency matrix contains edge
-               % edge only once, and A + A' is used implicitly
+                  % edge only once, and A + A' is used implicitly
 consts.ASYM = 2;  % Directed network, 
 consts.BIP  = 3;  % Bipartite network; the biadjacency matrix is passed
 
