@@ -5,6 +5,14 @@ Matlab.  It is part of the KONECT project (Koblenz Network Collection)
 
 http://konect.uni-koblenz.de/
 
+The toolbox largely implements the graph analysis functions described in
+the KONECT Handbook: 
+
+http://konect.uni-koblenz.de/downloads/konect-handbook.pdf
+
+The KONECT Handbook contains all formal definitions of the computations
+performed in this toolbox. 
+
 ## Installation
 
 The toolbox consists entirely of *.m files.  To use it, add the
@@ -24,14 +32,14 @@ Installation of BGL:
 
 Written by Jérôme Kunegis at the University of Koblenz-Landau.
 
-The KONECT Toolbox is free software: you can redistribute it and/or modify it under the
-terms of the GNU General Public License as published by the Free
-Software Foundation, either version 3 of the License, or (at your
-option) any later version. 
+The KONECT Toolbox is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version. 
 
-The KONECT Toolbox is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or
-FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-for more details. 
+The KONECT Toolbox is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details. 
 
-The full text of the GPLv3 is found in the file COPYING.
+The full text of the GPLv3 can be found in the file COPYING.
