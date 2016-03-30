@@ -1,4 +1,6 @@
-
+%
+% Test the MAP computation. 
+%
 
 cd ..
 
@@ -14,8 +16,8 @@ data = [
 3 4 1 .7
 ];
 
-precision = compute_map(data(:,4), data(:,1:3))
+precision = konect_map(data(:,4), data(:,1:3))
 
 if abs(precision - (1/2 + 1 + 1/3)/3) > 1e-10
-  error
+    error
 end

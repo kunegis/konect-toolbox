@@ -1,0 +1,20 @@
+#
+# This is a Stu file, instead of a Makefile.  
+# Get Stu at  https://github.com/kunegis/stu 
+#
+
+% version 1.9
+
+@all: @test;
+
+@test: @test.decompose @test.compute_map;
+
+matlab:  ../../konect-analysis/matlab {
+	cp ../../konect-analysis/matlab .
+}
+
+@test.$NAME:  matlab 
+{
+	./matlab test_$NAME.m 
+}
+

@@ -1,12 +1,14 @@
 %
 % Compute the mean average precision (MAP).
 %
+% Target values can only be 0/1.  Other values are rounded to 0/1. 
+%
 % PARAMETERS 
 %	prediction	(e*1)	Ranking scores; may be any real numbers
 %	T_test		(e*3)
 %		First column:  row indexes
 %		Second column: column indexes
-%		Third column: target values
+%		Third column: target values (0/1)
 %
 % RESULT 
 %	precision		The MAP value 
@@ -14,7 +16,7 @@
 
 function precision = konect_map(prediction, T_test)
 
-e = size(prediction,1); 
+e = size(prediction, 1); 
 
 %
 % Round target values

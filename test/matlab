@@ -1,10 +1,11 @@
 #! /bin/sh
 #
 # Execute a Matlab script.  This is a wrapper around Matlab that makes
-# it easier to run Matlab in batch mode and log the output of scripts. 
+# it easier to run Matlab in batch mode and log the output of scripts.
+# Used with Matlab 2009B.  
 #
 # PARAMETERS
-# 	$1	    	Basename of the Matlab program (without .m, but may contain directory) 
+# 	$1	    	The Matlab program (with or without .m; may contain directory) 
 # 	$jvm_enable	Enable the JVM; the JVM is disabled by default
 #	$verbose	When set, enable verbose mode (mainly for debugging)
 #	$MATLAB_PARAMS	Space-separated list of environment variables
@@ -13,25 +14,63 @@
 #			logfile name, such that multiple instances can
 #			run in parallel. 
 # 
-# Example:  to run m/map.m, use ./matlab m/map 
+# FILES
+#	error.log	Errors from all runs of this script are logged
+#			in this file  
+#
+# EXAMPLE
+#
+#	to run m/map.m, use ./matlab m/map.m 
 #
 # Matlab scripts run using this method usually don't use command line
-# arguments. Instead, environment variables are passed.  
+# arguments.  Instead, environment variables are passed.  
 #
 
+#
+# Setup files 
+#
+
+# Verbose output
 [ $verbose ] && exec 4>&2 || exec 4>/dev/null 
 
-exec 5>>error.log
+# Error log
+exec 6>>error.log
 
+#
+# Matlab configuration
+#
+
+# The command to use
 MATLAB=matlab
+
+# The options to use for Matlab 
 MATLAB_OPTIONS="-nodesktop -nosplash"
 if [ -z "$jvm_enable" ] ; then
-  MATLAB_OPTIONS="$MATLAB_OPTIONS -nojvm"
+	MATLAB_OPTIONS="$MATLAB_OPTIONS -nojvm"
 fi
 
+# Prefix
 [ "$PREFIX" ] && PREFIX=.$PREFIX
 export PREFIX
-export MATLAB_NAME="`basename $1`"
+
+# The name of script within Matlab
+SCRIPT="$1"
+export MATLAB_NAME="$(basename $SCRIPT | sed -re 's,\.m$,,')"
+echo >&4 "MATLAB_NAME=«$MATLAB_NAME»"
+
+# Check that the file exists
+FILENAME="$SCRIPT"
+if echo "$FILENAME" | grep -qvE '\.m$' ; then
+	FILENAME="$FILENAME.m"
+	if ! [ -r "$FILENAME" ] ; then
+		echo >&2 "*** No such file:  $FILENAME"
+		exit 1
+	fi
+fi
+
+#
+# Logging
+#
 
 LOGNAME=$USER.$MATLAB_NAME
 # This is a list of variable we want to be used in the log filename to
@@ -43,49 +82,70 @@ LOGNAME=$USER.$MATLAB_NAME
 [ "$METHOD" ]		&& LOGNAME=$LOGNAME.$METHOD 
 [ "$KIND"   ]      	&& LOGNAME=$LOGNAME.$KIND
 [ "$CLASS"   ]      	&& LOGNAME=$LOGNAME.$CLASS
-[ "$NETWORK" ]		&& LOGNAME=$LOGNAME.`basename $NETWORK`
+[ "$GROUP"   ]      	&& LOGNAME=$LOGNAME.$GROUP
+[ "$YEAR"   ]      	&& LOGNAME=$LOGNAME.$YEAR
+[ "$NETWORK" ]		&& LOGNAME=$LOGNAME."`basename "$NETWORK"`"
 
 for PARAM in $MATLAB_PARAMS
 do
-    eval [ "\$$PARAM"   ]   	&& eval LOGNAME=\$LOGNAME.\$$PARAM
+	eval [ "\$$PARAM"   ]   	&& eval LOGNAME=\$LOGNAME.\$$PARAM
 done
 
+echo >&4 "LOGNAME=«$LOGNAME»"
 
 export LOGNAME
 
 export TMP_BASE=${TMP-/tmp}/`basename $0`.$LOGNAME$PREFIX
 echo >&2 "   $TMP_BASE.log"
-echo >&4 TMP_BASE=»$TMP_BASE«
-
-DISPLAY=
-
-# $MATLAB_NAME and $PREFIX are used by load_diag(). 
-
-cd `dirname $1`
-
-# By default, glibc errors are written to the terminal directly.  This
-# will send them to stderr. 
-export LIBC_FATAL_STDERR_=1
+echo >&4 "TMP_BASE=«$TMP_BASE»"
 
 export LOGFILE=$TMP_BASE.log
 
-$MATLAB -logfile $LOGFILE -r $MATLAB_NAME $MATLAB_OPTIONS  \
-     >$TMP_BASE.out 2>&1 <<EOF  ||
-EOF
-{ 
-    echo "*** error in $TMP_BASE.log"; 
-    echo >&5 "*** error in $TMP_BASE.log"
-    exit 1; 
-}
+#
+# Other configurations
+#
+
+DISPLAY=
+
+# By default, glibc errors are written to the terminal directly.  This
+# will send them to stderr.  (Matlab has been known to trigger such errors.)  
+export LIBC_FATAL_STDERR_=1
+
+DIR_SCRIPT="$(dirname $SCRIPT)"
+if echo "$DIR_SCRIPT" | grep -vq '^/' ; then
+	DIR_SCRIPT="$PWD/$DIR_SCRIPT"
+fi
+export MATLABPATH="$DIR_SCRIPT:$MATLABPATH"
+echo >&4 MATLABPATH=«$MATLABPATH»
 
 # We have to use <<EOF or else Matlab will read its standard input and hang.
+$MATLAB -logfile $LOGFILE -r "$MATLAB_NAME" $MATLAB_OPTIONS  \
+	>$TMP_BASE.out 2>&1 <<EOF  ||
+EOF
+{ 
+	# Note: Matlab normally always exists with exit code 0, so if we
+	# are here Matlab probably crashed. 
+	echo >&2 "*** error in $TMP_BASE.log"
+	echo >&6 "*** error in $TMP_BASE.log"
+	exit 1
+}
 
-# Matlab does not exit(!=0) on error but prints »???«. 
-grep -E '(\?\?\?|^\*\*\* )' $TMP_BASE.log && 
+
+# Matlab does not exit(!=0) on error but prints ???. 
+grep -qE '(\?\?\?|^\*\*\* )' $TMP_BASE.log && 
 {
-  echo "*** error in $TMP_BASE.log"
-  echo >&5 "*** error in $TMP_BASE.log"
-  exit 1
+	echo "*** error in $TMP_BASE.log"
+	echo >&6 "*** error in $TMP_BASE.log"
+	<$TMP_BASE.log >&2 sed -re '
+		# Matlab output actually contains { and } sequences. 
+		s,.,,g
+		/\?\?\?|\*\*\*|[Ee]rror/!d
+		s,^(|\?\?\? )Error (in|using) ==> ([^ ]+) at ([0-9]+)$,\3.m:\4: ,
+		T
+		N
+		s,\n,,
+	'
+	exit 1
 }
 
 echo >>$TMP_BASE.log '=== FINISHED ==='
