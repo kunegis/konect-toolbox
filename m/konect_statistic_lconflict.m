@@ -12,7 +12,7 @@
 % ATTRIBUTE:  negative
 %
 
-function values = konect_statistic_sconflict(A, format, weights)
+function values = konect_statistic_lconflict(A, format, weights)
 
 opts.disp = 2; 
 
@@ -41,10 +41,16 @@ A = (A > 0) - (A < 0);
 % Absolute value
 A_abs = double(A ~= 0); 
 
-l_max     = eigs(A,     1, 'la', opts)
-l_min     = eigs(A,     1, 'sa', opts)
-l_abs_max = eigs(A_abs, 1, 'la', opts)
-l_abs_min = eigs(A_abs, 1, 'sa', opts)
+[n n2] = size(A)
 
-values = (l_max / l_min) / (l_abs_max / l_abs_min)
+% Laplacians
+D     = spdiags(sum(A_abs)', [0], n, n);
+L     = D - A;
+L_abs = D - A_abs;
+
+l_max     = eigs(L,     1, 'lm', opts);
+l_abs_max = eigs(L_abs, 1, 'lm', opts); 
+
+values = l_abs_max / l_max; 
+
 
