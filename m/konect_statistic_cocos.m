@@ -1,5 +1,6 @@
 %
-% Compute the size of the largest strongly connected component [cocos].
+% Compute the size of the largest strongly connected component
+% [cocos]. 
 %
 % PARAMETERS 
 %	A	Adjacency matrix
@@ -8,8 +9,9 @@
 %
 % RESULT 
 %	values	Size of the largest connected component
-%		[1] Size of largest strongly connected component
-%		[2] Relative size
+%		[1] Size of largest strongly connected component, in
+%		    nodes (N_s)
+%		[2] Relative size (N_s / n)
 %
 % ATTRIBUTE:  asym 
 %
