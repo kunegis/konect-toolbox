@@ -356,14 +356,12 @@ switch decomposition
     if format == consts.SYM
         A = konect_absx(A); 
         [U D V] = konect_decomposition_stoch1(A, r, format, weights, opts); 
-        %        U = V;
         V = []; 
     elseif format == consts.ASYM
         A = konect_absx(A);
         A = A + A';
         A = triu(A); 
         [U D V] = konect_decomposition_stoch1(A, r, consts.SYM, weights, opts); 
-        % U = V;
         V = []; 
     elseif format == consts.BIP
         [m n] = size(A); 

@@ -53,6 +53,16 @@ degrees = sum(A,2);
 
 degrees = degrees(degrees ~= 0); 
 
+if length(unique(degrees)) < 2
+    fprintf(1, ...
+            'konect_power_law_range.m:  length(unique(degrees)) = %u\n', length(unique(degrees)));
+    values = [ NaN; NaN; NaN ];
+    if enable_p
+        value = [ values ; NaN ; NaN ]; 
+    end
+    return;
+end
+
 range = [ 1.001 : 0.01 : 9 ]; 
 
 [gamma, xmin, L] = plfit(degrees, 'range', range)

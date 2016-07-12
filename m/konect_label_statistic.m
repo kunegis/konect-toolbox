@@ -128,7 +128,8 @@ elseif strcmp(statistic, 'diameff90'), 		ret = '90-percentile effective diameter
 elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)'; 
     
 else
-    error(sprintf('*** Invalid statistic %s', statistic)); 
+    ret= statistic; 
+    %    error(sprintf('*** Invalid statistic %s', statistic)); 
 end
 
 if strcmp(type, 'latex')
