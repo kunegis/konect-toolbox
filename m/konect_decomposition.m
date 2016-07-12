@@ -5,9 +5,6 @@
 %
 %    A = U D V'.
 %
-% The decompositions are not yet documented in the Handbook, and
-% therefore this file serves as the documentation. 
-%
 % A decomposition is characterized by
 %	* A matrix which is decomposed
 %	* A matrix decomposition
@@ -21,7 +18,7 @@
 % or nonnegative).  D has size r*r and U and V both have size n*r, in
 % which r is the size of the decomposition. 
 %
-% For the symmetric variants 'sym' 'sym-n', etc., the matrix a
+% For the symmetric variants 'sym' 'sym-n', etc., the matrix A
 % does not have to be symmetric, A+A' is used automatically. (This is
 % the right thing to do even for undirected networks, because in
 % undirected networks each edge is only stored once.  In other words,
