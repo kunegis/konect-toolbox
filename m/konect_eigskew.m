@@ -8,7 +8,7 @@
 %
 % where U and V are the real and complex parts of the eigenvectors of
 % B, and D is diagonal, real and nonnegative.  Note that if B was
-% constructed froma matrix A as B = A - A', then U D V' is in the
+% constructed from a matrix A as B = A - A', then U D V' is in the
 % general case *not* the singular value decomposition of A, and in
 % fact not even a good approximation of it.  This method is faster
 % than computing the actual eigenvalue decomposition of A - A'.  The
