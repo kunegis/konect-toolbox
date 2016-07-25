@@ -1,5 +1,6 @@
 % 
-% The assortativity \rho of a network.
+% The assortativity \rho of a network, i.e., the Pearson correlation
+% coefficient between the degree of two connected nodes. 
 % 
 % Ignore multiplicities, loops and edge directions. 
 %
@@ -10,7 +11,7 @@
 %	opts	(optional)
 %
 % RESULT 
-%	values 	Columns vector of results
+%	values 	Column vector of results
 %		[1] assortativity \rho
 %		[2] p-value 
 %
