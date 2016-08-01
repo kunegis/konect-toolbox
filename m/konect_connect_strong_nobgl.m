@@ -17,6 +17,9 @@ function [v] = konect_connect_strong_nobgl(A)
 assert(n == nx); 
 assert(n >= 1); 
 
+fprintf(1, 'konect_connect_strong_nobgl()  n = %u, m = %u\n', ...
+        n, nnz(A)); 
+
 %
 % Algorithm:  
 %   * Pick a node i at random 
@@ -29,44 +32,39 @@ assert(n >= 1);
 
 A = logical(A ~= 0); 
 
-%%count = 0; 
-%%count_max = 100; 
-
-%%v_visited= zeros(n, 1); 
 v_best = zeros(n, 1);
 v_best_size = 0; 
 
+% 
+% First, remove all nodes that don't have in-edges AND out-edges.
+% Such nodes all make up strongly components of size one.
+%
+
+i = (sum(A,2) == 0) | (sum(A,1)' == 0); 
+if nnz(i) > 0
+    fprintf(1, 'Removing %u nodes without in- AND out-edges\n', nnz(i));
+    i = find(i);
+    v_best(i(1)) = 1;
+    v_best_size = 1;
+    A(i,:) = 0; 
+    A(:,i) = 0;
+end
+
 while 1
-%%while count < count_max
 
-%%    count = count + 1; 
-
-%%    fprintf(1, '[%d]\n', count); 
-
-%%    assert(nnz(A) > 0); 
     if nnz(A) == 0
         assert(v_best_size >= 1);
         break;
-%%        v_best= zeros(n, 1);
-%%        v_best(1)= 1;
-%%        v_best_size= 1; 
-%%        break;
     end
 
     %
-    % Pick a node i that has neighbors
+    % Pick a node i that has the most neighbours 
     %
-    [x] = find(sum(A, 2));
-    i = x(1);
-%%    [y] = find(A(i,:));
-%%    j = y(1);
-    fprintf(1, 'i = %u\n', i); 
-
-    %%    i = 1+floor(rand * n); 
-    %%    Ai = A(i,:); 
-    %%    if sum(Ai) == 0, continue; end;
-    %%    js = find(Ai);
-    %%    j = js(1 + floor(rand * size(js,2))); 
+    [xx ii] = sort(sum(A, 2) + sum(A, 1)', 'descend'); 
+    i = ii(1); 
+    assert(sum(A(i,:)) + sum(A(:,i)) > 0); 
+    fprintf(1, 'i = %u   (%u nodes remaining, %u edges remaining)\n', ...
+            i, nnz(xx), nnz(A) / 2); 
 
     %
     % Find all nodes reachable from i
@@ -116,11 +114,9 @@ while 1
     % Remove all edges in the found strongly connected component from
     % A 
     %
-
     A(v, :) = 0;
     A(:, v) = 0;
 
 end
 
 v = v_best; 
-
