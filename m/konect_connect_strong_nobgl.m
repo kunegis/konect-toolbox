@@ -61,10 +61,11 @@ while 1
     % Pick a node i that has the most neighbours 
     %
     [xx ii] = sort(sum(A, 2) + sum(A, 1)', 'descend'); 
+    n_remaining = nnz(xx); 
     i = ii(1); 
     assert(sum(A(i,:)) + sum(A(:,i)) > 0); 
     fprintf(1, 'i = %u   (%u nodes remaining, %u edges remaining)\n', ...
-            i, nnz(xx), nnz(A) / 2); 
+            i, n_remaining, nnz(A) / 2); 
 
     %
     % Find all nodes reachable from i
@@ -105,10 +106,10 @@ while 1
     if v_size > v_best_size
         v_best = v; 
         v_best_size = v_size;
-        
-        % Cannot get bigger than this
-        if v_size > .5 * n, break; end; 
     end
+
+    % Cannot get bigger than this
+    if v_best_size > n_remaining, break; end; 
 
     %
     % Remove all edges in the found strongly connected component from
