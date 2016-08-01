@@ -4,6 +4,9 @@
 % 
 % Ignore multiplicities, loops and edge directions. 
 %
+% The value of \rho is NaN, when the corresponding Pearson
+% correlation is not defined, e.g., when the graph is regular. 
+%
 % PARAMETERS 
 %	A	
 %	format
@@ -52,7 +55,5 @@ elseif format == consts.BIP
     [rho pvalue] = corr(p, q)
 
 end
-
-assert(isfinite(rho)); 
 
 values = [ rho; pvalue ]; 
