@@ -35,22 +35,29 @@ A = logical(A ~= 0);
 v_best = zeros(n, 1);
 v_best_size = 0; 
 
-% 
-% First, remove all nodes that don't have in-edges AND out-edges.
-% Such nodes all make up strongly components of size one.
-%
-
-i = (sum(A,2) == 0) | (sum(A,1)' == 0); 
-if nnz(i) > 0
-    fprintf(1, 'Removing %u nodes without in- AND out-edges\n', nnz(i));
-    i = find(i);
-    v_best(i(1)) = 1;
-    v_best_size = 1;
-    A(i,:) = 0; 
-    A(:,i) = 0;
-end
-
 while 1
+
+    if nnz(A) == 0
+        assert(v_best_size >= 1);
+        break;
+    end
+
+    % 
+    % Remove all nodes that don't have in-edges AND out-edges.
+    % Such nodes all make up strongly components of size one.
+    %
+    i = (sum(A,2) == 0) ~= (sum(A,1)' == 0);
+%%    i = ((sum(A,2) == 0) | (sum(A,1)' == 0)) & ((sum(A,2) ~= 0) | (sum(A,1)' ~= 0));
+    if nnz(i) > 0
+        fprintf(1, 'Removing %u nodes without in- AND out-edges\n', nnz(i));
+        i = find(i);
+        if v_best_size < 1
+            v_best(i(1)) = 1;
+            v_best_size = 1;
+        end
+        A(i,:) = 0; 
+        A(:,i) = 0;
+    end
 
     if nnz(A) == 0
         assert(v_best_size >= 1);
@@ -65,7 +72,7 @@ while 1
     i = ii(1); 
     assert(sum(A(i,:)) + sum(A(:,i)) > 0); 
     fprintf(1, 'i = %u   (%u nodes remaining, %u edges remaining)\n', ...
-            i, n_remaining, nnz(A) / 2); 
+            i, n_remaining, nnz(A)); 
 
     %
     % Find all nodes reachable from i
@@ -76,7 +83,7 @@ while 1
     while 1
         v_from = v_from | logical(A' * v_from); 
         k_new = sum(v_from); 
-        fprintf(1, '  ->%d\n', k_new); 
+%%        fprintf(1, '  ->%d\n', k_new); 
         if k_new == k, break; end; 
         k = k_new; 
     end
@@ -88,7 +95,7 @@ while 1
     while 1
         v_to = v_to | logical(A * double(v_to)); 
         k_new = sum(v_to); 
-        fprintf(1, '  <-%d\n', k_new); 
+%%        fprintf(1, '  <-%d\n', k_new); 
         if k_new == k, break; end; 
         k = k_new; 
     end
@@ -117,6 +124,19 @@ while 1
     %
     A(v, :) = 0;
     A(:, v) = 0;
+
+    %
+    % Remove all found children and parents that cannot be part of a
+    % bigger strongly connected component. 
+    %
+    if nnz(v_from) < v_best_size
+        A(v_from, :) = 0;
+        A(:, v_from) = 0;
+    end
+    if nnz(v_to) < v_best_size
+        A(v_to, :) = 0;
+        A(:, v_to) = 0;
+    end
 
 end
 
