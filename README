@@ -1,24 +1,31 @@
-# KONECT Toolbox
+##### KONECT Toolbox #####
 
 This is a toolbox for the analysis of large complex networks written in
 Matlab.  It is part of the KONECT project (Koblenz Network Collection)
 
 http://konect.uni-koblenz.de/
 
-The toolbox largely implements the graph analysis functions described in
+This Toolbox implements individual network analysis functions,
+statistics and some machine learning methods.  If you want a complete
+"run all analyses on this network" package, use the KONECT Analysis
+package:
+
+https://github.com/kunegis/konect-analysis
+
+The toolbox largely implements the graph analysis functions described in 
 the KONECT Handbook: 
 
 http://konect.uni-koblenz.de/downloads/konect-handbook.pdf
 
-The KONECT Handbook contains all formal definitions of the computations
-performed in this toolbox. 
+In particular, the KONECT Handbook contains all formal definitions of
+the computations performed in this toolbox. 
 
-## Installation
+## Installation ##
 
 The toolbox consists entirely of *.m files.  To use it, add the
 directory m/ to the Matlab path, e.g., using addpath().  
 
-## Requirements
+## Requirements ##
 
 Some functions need BGL, the Boost Graph Library. 
 
@@ -28,7 +35,7 @@ Installation of BGL:
 * (on some systems:  install libstdc++5 from http://packages.debian.org/stable/base/libstdc++5)
 * symlink the unzipped matlab_bgl to here
 
-## License
+## License ##
 
 Written by Jérôme Kunegis at the University of Koblenz-Landau.
 
