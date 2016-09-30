@@ -66,9 +66,7 @@ classdef konect_timer
         end
 
         function text = konect_timer_text(this, t)
-            if t < 60
-                text = sprintf('%ds', floor(t));   
-            elseif t < 3600
+            if t < 3600
                 text = sprintf('%d:%02d', floor(t/60), mod(floor(t), 60)); 
             elseif t < 3600 * 24
                 text = sprintf('%d:%02d:%02d', floor(t/3600), mod(floor(t/60), 60), mod(floor(t), 60)); 
