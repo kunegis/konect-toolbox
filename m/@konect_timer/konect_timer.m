@@ -71,7 +71,7 @@ classdef konect_timer
             elseif t < 3600 * 24
                 text = sprintf('%d:%02d:%02d', floor(t/3600), mod(floor(t/60), 60), mod(floor(t), 60)); 
             else
-                text = sprintf('%dd %02d:%02d:%02d', floor(t/3600/24), mod(floor(t/3600), 24), mod(floor(t/60), 60), mod(floor(t), 60)); 
+                text = sprintf('%d-%02d:%02d:%02d', floor(t/3600/24), mod(floor(t/3600), 24), mod(floor(t/60), 60), mod(floor(t), 60)); 
             end
         end 
 
