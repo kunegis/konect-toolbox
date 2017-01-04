@@ -1,11 +1,15 @@
 %
 % Save a plot to a file.  This is used to print all KONECT plots.   
 %
+% PARAMETERS
+% 
+%   filename	The EPS filename 
+%
 % STYLE 
 %
 % Plots in KONECT follow the following style recommendations: 
 %
-% * Don't include a title (titles are added in papers using latex)
+% * Don't include a title (titles are added in papers using Latex)
 % * Grid lines are included for the Y axis when the X axis is
 %   discrete (or the other way around); otherwise they are omitted. 
 % * The plots should be viewable at small size, for papers and the
