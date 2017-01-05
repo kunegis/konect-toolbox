@@ -4,11 +4,12 @@
 % matrix used in the corresponding decomposition. 
 %
 % For decompositions which are only applied to the largest connected
-% component, this functions does not return a matrix restricted to
-% that set of nodes; callers must do this instead. 
+% component, this functions does *not* return a matrix restricted to
+% that set of nodes; callers must do this themselves. 
 %
-% In addition to the matrix decompositions defined by KONECT, the
-% argument DECOMPOSITION can be:
+% The parameter DECOMPOSITION determines which matrix is returned.
+% In addition to the matrix decompositions defined by in the KONECT
+% Handbook, the argument DECOMPOSITION can also be:
 %
 %	'bip'		The bipartite double cover, i.e., return 
 %			[0 A; A' 0]
@@ -21,13 +22,18 @@
 %			corresponding to 'sym-n'
 %
 % PARAMETERS 
-%	decomposition	Decomposition name, e.g., 'lap'
+%	decomposition	Decomposition name as string, e.g., 'lap' to get
+%			the Laplacian matrix
 %	A		(n1*n2) Adjacency or biadjacency matrix; sparse
 %	format		(optional) The network format.  Default is
-%			ASYM when A is square and BIP otherwise  
+%			ASYM when A is square and BIP otherwise.  Don't
+%			rely on the default, because a bipartite network
+%			could have the same number of left and right
+%			nodes, even if that is extremely unlikely for
+%			large networks. 
 %	weights		(optional) The network weights type.  Default
 %			is WEIGHTED.  This parameter is ignored for
-%			most decompositions 
+%			most decompositions.
 %	opts		(optional) Passed to eigs()/svds()
 %
 % RESULT 
