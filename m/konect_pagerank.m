@@ -2,9 +2,18 @@
 % Compute PageRank.  This functions supports nodes with zero
 % outdegree, and teleportation. 
 %
+% The given graph is directed and may be weighted.  To use with an
+% undirected graph (with is trivial because the PageRank values are then
+% proportional to a power of the degree), pass a symmetric adjacency
+% matrix. 
+%
+% This implementation avoids using O(n^2) memory, and needs only O(m)
+% memory instead, where m is the number of edges in the graph. 
+%
 % PARAMETERS 
-%	A       (n*n) Asymmetric adjacency matrix of directed graph 
-%	alpha   Amount of teleportation to do, e.g., 0.2
+%	A       (n*n) Adjacency matrix of the directed graph 
+%	alpha   Amount of teleportation to do, e.g., 0.2.  Zero denotes
+%	 	no teleportation
 %	opts    (optional) Options to eigs() 
 %
 % RESULTS 
@@ -14,7 +23,7 @@
 function [u] = konect_pagerank(A, alpha, opts)
 
 if ~exist('opts', 'var')
-    opts.disp = 2; 
+  opts.disp = 2; 
 end
 
 [m n] = size(A);
