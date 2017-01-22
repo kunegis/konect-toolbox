@@ -1,11 +1,12 @@
-##### KONECT Toolbox #####
+== KONECT Toolbox ==
 
 This is a toolbox for the analysis of large complex networks written in
-Matlab.  It is part of the KONECT project (Koblenz Network Collection)
+Matlab, but also largely compatible with GNU Octave.  It is part of the
+KONECT project (Koblenz Network Collection)  
 
 http://konect.uni-koblenz.de/
 
-This Toolbox implements individual network analysis functions,
+This toolbox implements individual network analysis functions,
 statistics and some machine learning methods.  If you want a complete
 "run all analyses on this network" package, use the KONECT Analysis
 package:
@@ -20,14 +21,18 @@ http://konect.uni-koblenz.de/downloads/konect-handbook.pdf
 In particular, the KONECT Handbook contains all formal definitions of
 the computations performed in this toolbox. 
 
-## Installation ##
+=== Installation ===
 
 The toolbox consists entirely of *.m files.  To use it, add the
-directory m/ to the Matlab path, e.g., using addpath().  
+directory m/ to the Matlab path, e.g., using addpath() or by setting the
+$MATLABPATH variable.
 
-## Requirements ##
+GNU Octave also supports the addpath() function and $MATLABPATH
+variable. 
 
-Some functions need BGL, the Boost Graph Library. 
+=== Requirements ===
+
+Some functions need BGL, the Boost Graph Library.  
 
 Installation of BGL:
 * Download version 4.0.1 from website (newer versions may not work)
@@ -35,9 +40,46 @@ Installation of BGL:
 * (on some systems:  install libstdc++5 from http://packages.debian.org/stable/base/libstdc++5)
 * symlink the unzipped matlab_bgl to here
 
-## License ##
+=== Usage ===
 
-Written by Jérôme Kunegis at the University of Koblenz-Landau.
+The toolbox consists of individual functions, each of which is
+containing in its own *.m file in the m/ directory.  
+
+Most functions are self-contained, and can be used as-is. 
+
+Each function is documented in its source file.  
+
+The source files contain UTF-8 encoded text in the comments; the rest is
+ASCII.  
+
+The functions are used from both Matlab and GNU Octave.  Since none of
+these is properly standardised, we can't assure that all versions will
+work -- when in doubt, ask. 
+
+If you fix bugs or add new features, please contact Jérôme Kunegis
+<kunegis@gmail.com> so we can merge your changes into the master
+version. 
+
+=== Help ===
+
+For support write to Jérôme Kunegis <kunegis@gmail.com>, or write a
+ticket on GitHub:
+
+https://github.com/kunegis/konect-toolbox
+
+=== License ===
+
+Written by Jérôme Kunegis at the University of Koblenz-Landau and at the
+University of Namur.
+
+The KONECT Toolbox is free software, and therefore you can easily use it
+in your project.  You can either tell your users that they have to
+install the KONECT Toolbox before they use your software, or you can put
+a copy of the files you need into your project directory.  If you copy
+files from the KONECT Toolbox into your project directory, make sure you
+follow the GNU GPL:  Write in your README file which files are from the
+KONECT Toolbox, mention this license information, and provide a copy of
+the GNU GPL, i.e., the file COPYING. 
 
 The KONECT Toolbox is free software: you can redistribute it and/or
 modify it under the terms of the GNU General Public License as published
