@@ -29,7 +29,7 @@
 
 function [ret ret_data] = konect_pa_full(i_1, w_1, i_2, w_2)
 
-% Regularizarion parameter
+% Regularizarion parameters
 lambda = 0.1;
 lambda_1 = 1; 
 
@@ -37,7 +37,7 @@ lambda_1 = 1;
 n = max(max(i_1), max(i_2)); 
 
 % (n*1) 
-% The degree of each vertex
+% The degree of each vertex, for both time bins
 d_1 = sparse(i_1, 1, w_1, n, 1);
 d_2 = sparse(i_2, 1, w_2, n, 1);
 

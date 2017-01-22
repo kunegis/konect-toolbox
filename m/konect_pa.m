@@ -2,19 +2,19 @@
 % Compute the preferential attachment exponent [1].
 %
 % In short, this takes a set of old and new edges, and computes a number
-% \beta >= 0 that characterizes to what extent preferential attachment is
+% β ≥ 0 that characterizes to what extent preferential attachment is
 % present in the network.  Zero denotes no preferential attachment and one
 % denotes linear preferential attachment (as usually defined). 
 %
 % PARAMETERS 
-%   T1  (m1*{2,3}) all old edges (with optional weights)
-%   T2  (m2*{2,3}) all new edges (with optional weights)
+%   T1  (m1×{2,3}) all old edges (with optional weights)
+%   T2  (m2×{2,3}) all new edges (with optional weights)
 %
 % If T2 is not given, T1 is understood to contain all edges, from oldest
 % to newest, and is split in a 2/3+1/3 fashion. 
 %
 % RETURN VALUE 
-%   beta	The preferential attachment β
+%   beta	The preferential attachment exponent β
 %
 % REFERENCES 
 %   [1] Preferential Attachment in Online Networks:  Measurement and
