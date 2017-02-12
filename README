@@ -2,7 +2,7 @@
 
 This is a toolbox for the analysis of large complex networks written in
 Matlab, but also largely compatible with GNU Octave.  It is part of the
-KONECT project (Koblenz Network Collection)  
+KONECT project (Koblenz Network Collection). 
 
 http://konect.uni-koblenz.de/
 
@@ -13,13 +13,13 @@ package:
 
 https://github.com/kunegis/konect-analysis
 
-The toolbox largely implements the graph analysis functions described in 
+This toolbox largely implements the graph analysis functions described in 
 the KONECT Handbook: 
 
 http://konect.uni-koblenz.de/downloads/konect-handbook.pdf
 
 In particular, the KONECT Handbook contains all formal definitions of
-the computations performed in this toolbox. 
+the computations performed in this toolbox.
 
 === Installation ===
 
@@ -27,7 +27,7 @@ The toolbox consists entirely of *.m files.  To use it, add the
 directory m/ to the Matlab path, e.g., using addpath() or by setting the
 $MATLABPATH variable.
 
-GNU Octave also supports the addpath() function and $MATLABPATH
+GNU Octave too supports the addpath() function and $MATLABPATH
 variable. 
 
 === Requirements ===

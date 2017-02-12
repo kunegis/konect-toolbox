@@ -1,6 +1,6 @@
 %
-% Visualize a power law. This draws the complementary cumulative
-% distribution of the given values. It is similar to cdfplot(), but
+% Visualize a power law.  This draws the complementary cumulative
+% distribution of the given values.  It is similar to cdfplot(), but
 % shows P(x > X) instead of P(x < X), where x is a randomly chosen
 % value out of the given values, and X is a value from the plot's X
 % axis.  
@@ -21,7 +21,7 @@
 %
 %	A = ...; % Adjacency matrix of graph
 %	d = sum(A,2); % Degree vector
-%	konect_power_law_plot(d);
+%	konect_plot_power_law(d);
 %
 % PARAMETERS 
 %	values			(n*1) Values, i.e. the degree vector;
@@ -42,7 +42,7 @@
 %	line_style		(optional, default = '-')
 %
 
-function konect_power_law_plot(values, ...
+function konect_plot_power_law(values, ...
                                c, ...
                                enable_normalization, ...
                                color, ...
