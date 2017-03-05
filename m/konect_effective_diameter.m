@@ -1,11 +1,16 @@
 %
-% Estimate the effective diameter of a graph.  The graph should be
-% connected.  In unipartite graphs, this computes the strong (i.e.,
-% unidirectional) diameter.  To get the weak (unoriented) diameter,
-% pass A+A'.  
+% Estimate the 90-percentile effective diameter of a graph.  The graph
+% should be connected.  In unipartite graphs, this computes the strong
+% (i.e., unidirectional) diameter.  To get the weak (unoriented)
+% diameter, pass A+A'.
+%
+% The value returned is imprecise as a heuristic is used (node
+% sampling).  No accuracy of the result is returned, or even known. 
+%
+% This always computes the 90-percentile effective diameter. 
 %
 % PARAMETERS 
-%	A	Adjacency matrix or biadjacency matrix
+%	A	Adjacency matrix or biadjacency matrix 
 %	epsi 	(optional) Requested precision
 %
 % RESULT 
