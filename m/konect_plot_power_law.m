@@ -52,7 +52,7 @@ function konect_plot_power_law(values, ...
 
 factor = 1.5; % Distance to the edge of the plot when setting the axis
 font_size = 24; 
-line_width = 3; 
+line_width = 7; 
 
 if ~exist('c', 'var')
     c = []; 
