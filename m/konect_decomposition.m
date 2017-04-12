@@ -10,20 +10,20 @@
 %	* A matrix decomposition
 %
 % The following suffixes are used in the names of decompositions:
-%	n - Normalization
+%	n   - Normalization
 %	abs - Ignore edge weights and multiplicities
-%	c - Work on largest connected component
+%	c   - Work on largest connected component
 %
-% There are no other constraints (such as U/V orthogonal or D diagonal
+% There are no other constraints (such as U/V being orthogonal or D diagonal
 % or nonnegative).  D has size r*r and U and V both have size n*r, in
-% which r is the size of the decomposition. 
+% which r is the size (or rank) of the decomposition. 
 %
 % For the symmetric variants 'sym' 'sym-n', etc., the matrix A
-% does not have to be symmetric, A+A' is used automatically. (This is
+% does not have to be symmetric, A+A' is used automatically.  This is
 % the right thing to do even for undirected networks, because in
 % undirected networks each edge is only stored once.  In other words,
 % the matrix A to pass for undirected networks should *not* be
-% symmetric.) 
+% symmetric.  It is called the half-adjacency matrix of A. 
 %
 % The returned decomposition may have rank less than the given rank.
 % This happens when the given matrices have too low rank.  It also
