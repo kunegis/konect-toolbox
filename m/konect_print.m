@@ -38,8 +38,21 @@
 % outlinks/inlinks:  red/green (consistent with left/right
 %    distributions in bipartite networks) 
 %
+% NOTES 
+% 
+% With Octave under Ubuntu, it seems that package "epstool" must be
+% installed.  
+%
 
 function konect_print(filename)
+
+% In Octave, use some better fonts
+if konect_usingoctave()
+  FN = findall(0,'-property','FontName');
+  set(FN,'FontName','/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf'); 
+  FS = findall(0,'-property','FontSize');
+  set(FS,'FontSize', 15); 
+end
 
 try 
     % "epsc" stands for "EPS color".  The "-d" options sets the device. 
@@ -47,8 +60,13 @@ try
 
 catch err
 
-    delete(filename);
-    error(sprintf('Error while printing %s', filename)); 
+  % Print the error 
+  err
+  
+  % Delete the eventually existing partially generated file 
+  delete(filename);
+
+  error(sprintf('Error while printing %s', filename)); 
     
 end
 
