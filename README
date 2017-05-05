@@ -2,7 +2,10 @@
 
 This is a toolbox for the analysis of large complex networks written in
 Matlab, but also largely compatible with GNU Octave.  It is part of the
-KONECT project (Koblenz Network Collection). 
+KONECT project (Koblenz Network Collection) by Jérôme Kunegis at the
+University of Namur, Belgium, with hosting provided by the Institute for
+Web Science and Technologies (WeST) at the University of Koblenz-Landau,
+Germany. 
 
 http://konect.uni-koblenz.de/
 
@@ -62,15 +65,14 @@ version.
 
 === Help ===
 
-For support write to Jérôme Kunegis <kunegis@gmail.com>, or write a
-ticket on GitHub:
+For support, write to Jérôme Kunegis <jerome.kunegis@unamur.be>, or
+directly write a ticket on GitHub:
 
 https://github.com/kunegis/konect-toolbox
 
 === License ===
 
-Written by Jérôme Kunegis at the University of Koblenz-Landau and at the
-University of Namur.
+Written by Jérôme Kunegis at the University of Namur, Belgium.
 
 The KONECT Toolbox is free software, and therefore you can easily use it
 in your project.  You can either tell your users that they have to
