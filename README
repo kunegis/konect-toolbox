@@ -2,10 +2,9 @@
 
 This is a toolbox for the analysis of large complex networks written in
 Matlab, but also largely compatible with GNU Octave.  It is part of the
-KONECT project (Koblenz Network Collection) by Jérôme Kunegis at the
-University of Namur, Belgium, with hosting provided by the Institute for
-Web Science and Technologies (WeST) at the University of Koblenz-Landau,
-Germany. 
+KONECT project by Jérôme Kunegis at the University of Namur, Belgium,
+with web hosting provided by the Institute for Web Science and
+Technologies (WeST) at the University of Koblenz-Landau, Germany.
 
 http://konect.uni-koblenz.de/
 
@@ -19,7 +18,7 @@ https://github.com/kunegis/konect-analysis
 This toolbox largely implements the graph analysis functions described in 
 the KONECT Handbook: 
 
-http://konect.uni-koblenz.de/downloads/konect-handbook.pdf
+https://github.com/kunegis/konect-handbook/blob/master/konect-handbook.pdf
 
 In particular, the KONECT Handbook contains all formal definitions of
 the computations performed in this toolbox.
@@ -60,8 +59,8 @@ these is properly standardised, we can't assure that all versions will
 work -- when in doubt, ask. 
 
 If you fix bugs or add new features, please contact Jérôme Kunegis
-<kunegis@gmail.com> so we can merge your changes into the master
-version. 
+<jerome.kunegis@unamur.be> so we can merge your changes into the master
+version.
 
 === Help ===
 
