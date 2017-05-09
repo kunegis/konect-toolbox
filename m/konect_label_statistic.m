@@ -139,8 +139,8 @@ if strcmp(type, 'latex')
 elseif strcmp(type, 'latex-short')
     
     % Keep what is inside the $s
-    ret = regexprep(ret, '^[^\$]+(\$', '');
-    ret = regexprep(ret, '\$)[^\$]*$', ''); 
+    ret = regexprep(ret, '^[^\$]+\(\$', '');
+    ret = regexprep(ret, '\$\)[^\$]*$', ''); 
     
 elseif strcmp(type, 'matlab')
 
