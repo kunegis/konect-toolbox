@@ -34,7 +34,7 @@
 %	L	(n*n) Laplacian matrix, must be symmetric and
 %		positive-semidefinite (i.e., all eigenvalues
 %		nonnegative) 
-%	r	Reduced rank
+%	r	Rank of the decomposition; must be smaller than N
 % 	opts	(optional) Options to eigs 
 %	method	(optional, defaults to 'epsilon') 
 %		'sa'		eigs('sa'); works only when 0 is not

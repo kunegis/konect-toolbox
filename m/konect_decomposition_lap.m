@@ -29,7 +29,7 @@ consts = konect_consts();
 if format ~= consts.BIP 
     [A cc n] = konect_connect_matrix_square(A);
     L = konect_matrix('lap', A, format, weights, opts); 
-    r = min(r, size(A,1)); 
+    r = min(r, size(A,1) - 1); 
     [U,D] = konect_eigl(L, r, opts);
     U = konect_connect_back(cc, U); 
     V = []; 
@@ -37,7 +37,7 @@ else % BIP
     [A cc1 cc2 n] = konect_connect_matrix_bipartite(A); 
     [m,n] = size(A); 
     L = konect_matrix('lap', A, format, weights, opts); 
-    r = min([r m n]); 
+    r = min([r (m-1) (n-1)]); 
     [uu,D] = konect_eigl(L, r, opts);
     U = uu(1:m, :);
     V = uu((m+1):(m+n), :);
