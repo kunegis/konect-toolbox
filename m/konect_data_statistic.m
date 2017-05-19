@@ -106,10 +106,11 @@ logarithmic.degone		= 1;
 logarithmic.diameff50		= 1;
 logarithmic.diameff90		= 1;
 logarithmic.dconflict		= 0;
+logarithmic.syngraphyruntime    = 1;
 
 integer.size 			= 1;
-integer.size__2 			= 1;
-integer.size__3 			= 1;
+integer.size__2 		= 1;
+integer.size__3 		= 1;
 integer.power			= 0;
 integer.powerv			= 0;
 integer.power2			= 0;
@@ -196,6 +197,7 @@ integer.degone			= 0;
 integer.diameff50		= 0;
 integer.diameff90		= 0;
 integer.dconflict		= 0;
+integer.syngraphyruntime        = 0;
 
 percent.gini 			= 1;
 percent.clusco			= 1;
@@ -221,3 +223,4 @@ percent.diameff50		= 0;
 percent.diameff90		= 0;
 percent.dconflict		= 1; 
 percent.conflict__2		= 1;
+percent.syngraphyruntime        = 0;
