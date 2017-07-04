@@ -3,13 +3,13 @@
 %
 % The computed number of triangles is independent of the orientation
 % of edges.  The multiplicity of edges is ignored.  Loops in 
-% graph are ignored. 
+% graph are ignored.
 %
 % PARAMETERS 
 %	A	Adjacency matrix
 %	format
 %	weights
-%	opts	(optional)
+%	opts	(optional, unused)
 %
 % RESULT 
 %	values 	Columns vector of results
