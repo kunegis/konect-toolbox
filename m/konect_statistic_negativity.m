@@ -15,6 +15,8 @@
 
 function value = konect_statistic_negativity(A, format, weights)
 
+consts = konect_consts(); 
+  
 assert(weights == consts.SIGNED | weights == consts.MULTISIGNED | ...
        weights == consts.WEIGHTED | weights == consts.MULTIWEIGHTED); 
 
