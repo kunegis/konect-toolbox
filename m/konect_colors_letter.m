@@ -11,19 +11,18 @@
 function colors = konect_colors_letter()
 
 % All nodes
-colors.a = [0 0 1];
+colors.a      = 	[0 0 1];
 
 % Only left nodes (BIP)
 % Only outlinks (ASYM)
-colors.u = [1 0 0];
+colors.u      = 	[1 0 0];
 
 % Only right nodes (BIP)
 % Only inlinks (ASYM)
-colors.v = [0 0.9 0]; 
+colors.v      = 	[0 0.9 0]; 
 
 % Edge weight distribution
 colors.weight = 	[0.7 0.5 0]; 
 
 % Out/in-link comparison 
 colors.b      =         [0.5 0.8 0]; 
-

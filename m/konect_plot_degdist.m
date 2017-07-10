@@ -57,7 +57,7 @@ colors = konect_colors_letter();
 
 [counts ids] = sort(d); 
 
-maxcount = counts(end);
+maxcount = counts(end)
 freq = histc(counts, 0 : maxcount); 
 
 nz = freq ~= 0; 
