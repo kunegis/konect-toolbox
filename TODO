@@ -1,3 +1,2 @@
-* Instead of have m/konect_{label,data}_statistic.m, store that
-  information as metadata in each m/konect_statistic_$statistic.m file
-  separately
+TODOs for the KONECT Toolbox are usually kept track of within
+konect-analysis/TODO.
