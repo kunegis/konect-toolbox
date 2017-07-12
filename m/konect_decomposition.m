@@ -245,7 +245,7 @@ switch decomposition
     % of the adjacency matrix to the largest strongly connected
     % components. 
 
-    try
+%%    try
         [U D] = eigs(@(x)(A * x), size(A,1), r, 'lm', opts); 
         % V = pinv(U)'; do it using the economic full SVD
         [uu dd vv] = svd(U, 'econ');
@@ -255,13 +255,13 @@ switch decomposition
         U = U(:,i);
         D = D(i,i);
         V = V(:,i);   
-    catch err
-        err.message
-        err.stack
-        U = zeros(n,r);
-        V = zeros(n,r);
-        D = zeros(r,r); 
-    end
+%%    catch err
+%%        err.message
+%%        err.stack
+%%        U = zeros(n,r);
+%%        V = zeros(n,r);
+%%        D = zeros(r,r); 
+%%    end
 
   case 'skew1'
     b = konect_matrix(decomposition, A, format, weights, opts); 
@@ -392,7 +392,7 @@ switch decomposition
         [b] = konect_matrix(decomposition, A, format, weights, opts); 
         r = min(r, size(b,1) - 2); 
         if r >= 3
-            try
+%%            try
                 opts.maxit = 3000; 
                 [U D] = eigs(b, r, 'lm', opts); 
 
@@ -404,13 +404,13 @@ switch decomposition
                 U = U(:,i);
                 D = D(i,i);
                 V = V(:,i); 
-            catch err
-                err.message
-                err.stack
-                U = zeros(n,r);
-                V = zeros(n,r);
-                D = zeros(r,r); 
-            end
+%%            catch err
+%%                err.message
+%%                err.stack
+%%                U = zeros(n,r);
+%%                V = zeros(n,r);
+%%                D = zeros(r,r); 
+%%            end
         else
             U = zeros(n,3);
             V = zeros(n,3);
@@ -427,7 +427,7 @@ switch decomposition
 
     [B d_u d_v] = konect_matrix('svd-n', A); 
 
-    try 
+%%    try 
         size_B = size(B)
         r
         r = min(r, size(B, 1) - 2)
@@ -444,14 +444,14 @@ switch decomposition
         U = konect_connect_back(cc, U);
         V = konect_connect_back(cc, V); 
 
-    catch err
-        err.message
-        err.stack
-        U = [];   
-        D= [];
-        V = []; 
-        error(); 
-    end
+%%    catch err
+%%        err.message
+%%        err.stack
+%%        U = [];   
+%%        D= [];
+%%        V = []; 
+%%        error(); 
+%%    end
 
   case 'back'
 

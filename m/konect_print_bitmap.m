@@ -1,5 +1,7 @@
-
-% Print a PNG
+%
+% Print a PNG.  This is used when the amount of elements in the plot is
+% O(n) or larger.  
+%
 
 function konect_print_bitmap(filename)
 
@@ -21,4 +23,3 @@ catch err
 end
 
 close all;
-
