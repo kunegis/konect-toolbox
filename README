@@ -45,7 +45,7 @@ Installation of BGL:
 === Usage ===
 
 The toolbox consists of individual functions, each of which is
-containing in its own *.m file in the m/ directory.  
+contained in its own *.m file in the m/ directory.  
 
 Most functions are self-contained, and can be used as-is. 
 
