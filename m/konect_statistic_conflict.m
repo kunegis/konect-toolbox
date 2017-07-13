@@ -13,7 +13,7 @@
 %		[1] The algebraic conflict \xi
 %		[2] The relative relaxed frustration \xi n / 8 m
 %
-% ATTRIBUTE:  negative
+% GROUP:  negative
 %
 
 function values = konect_statistic_conflict(A, format, weights)

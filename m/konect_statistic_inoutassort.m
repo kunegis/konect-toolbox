@@ -2,7 +2,7 @@
 % Compute the in/outdegree assortativity, i.e., the Pearson correlation
 % between the in-degree and the out-degree in directed networks. 
 %
-% ATTRIBUTE:  asym
+% GROUP:  asym
 %
 % RESULT
 %	[1] 	Pearson correlation of log(d+1)
@@ -48,4 +48,3 @@ values(7) = r;  values(8) = p;
 
 [r, p] = corr(d_out, d_in, 'type', 'Spearman');
 values(9) = r;  values(10) = p;
-

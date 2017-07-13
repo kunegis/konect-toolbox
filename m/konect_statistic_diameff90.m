@@ -1,2 +1,2 @@
-% ATTRIBUTE:
+% GROUP:
 

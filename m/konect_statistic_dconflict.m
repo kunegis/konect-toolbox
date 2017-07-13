@@ -14,7 +14,7 @@
 %	values	Column vector of results
 %		[1] \eta
 %
-% ATTRIBUTE:  asymnegative
+% GROUP:  asymnegative
 %
 
 function values = konect_statistic_dconflict(A, format, weights)

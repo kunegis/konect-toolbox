@@ -16,7 +16,7 @@
 %	[5]	average outdegree (not ignoring 0-nodes)
 %	[6]	average indegree (not ignoring 0-nodes)
 %
-% ATTRIBUTE:  asym 
+% GROUP:  asym 
 %
 
 function values = konect_statistic_avgdegreeasym(A, format, weights)

@@ -1,4 +1,4 @@
 
 % This is the number of left nodes. 
 
-% ATTRIBUTE:  bip
+% GROUP:  bip

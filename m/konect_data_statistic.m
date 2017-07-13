@@ -112,6 +112,7 @@ logarithmic.inoutassort__3	= 0;
 logarithmic.inoutassort__5	= 0;
 logarithmic.inoutassort__7	= 0;
 logarithmic.inoutassort__9	= 0;
+logarithmic.avgmult		= 1;
 
 integer.size 			= 1;
 integer.size__2 		= 1;
@@ -208,6 +209,7 @@ integer.inoutassort__3		= 0;
 integer.inoutassort__5		= 0;
 integer.inoutassort__7		= 0;
 integer.inoutassort__9		= 0;
+integer.avgmult			= 0; 
 
 percent.gini 			= 1;
 percent.clusco			= 1;
@@ -239,3 +241,4 @@ percent.inoutassort__3		= 0;
 percent.inoutassort__5		= 0;
 percent.inoutassort__7		= 0;
 percent.inoutassort__9		= 0;
+percent.avgmult			= 0;

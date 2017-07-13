@@ -7,7 +7,7 @@
 % where lambda_min[N] is the smallest eigenvalue of the normalized
 % adjacency matrix N = D^-1/2 A D^-1/2. 
 %
-% ATTRIBUTE:  square
+% GROUP:  square
 %
 % PARAMETERS 
 %	A	Adjacency matrix

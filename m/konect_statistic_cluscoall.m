@@ -18,15 +18,15 @@
 %		[7-12] same with [clusco2, i.e., mean of local
 %			clustering coefficients]
 %
-% ATTRIBUTE:  square 
-% ATTRIBUTE+3:  squarenegative
-% ATTRIBUTE+4:  squarenegative
-% ATTRIBUTE+5:  squarenegative
-% ATTRIBUTE+6:  squarenegative
-% ATTRIBUTE+9:  squarenegative
-% ATTRIBUTE+10:  squarenegative
-% ATTRIBUTE+11:  squarenegative
-% ATTRIBUTE+12:  squarenegative
+% GROUP:  square 
+% GROUP+3:  squarenegative
+% GROUP+4:  squarenegative
+% GROUP+5:  squarenegative
+% GROUP+6:  squarenegative
+% GROUP+9:  squarenegative
+% GROUP+10:  squarenegative
+% GROUP+11:  squarenegative
+% GROUP+12:  squarenegative
 %
 
 function values = konect_statistic_cluscoall(A, format, weights)

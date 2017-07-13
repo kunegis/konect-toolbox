@@ -25,7 +25,7 @@
 % RESULT 
 %	value	The algebraic asymmetry
 %
-% ATTRIBUTE:  asym 
+% GROUP:  asym 
 %
 
 function value = konect_statistic_reciprocity(A, format, weights)

@@ -20,7 +20,7 @@
 % In general, measures of non-bipartivity are prefered over measures of
 % bipartivity in KONECT.
 %
-% ATTRIBUTE:  square
+% GROUP:  square
 %
 
 function values = konect_statistic_bip(A, format, weights)

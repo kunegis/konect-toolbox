@@ -1,3 +1,3 @@
 
 
-% ATTRIBUTE:  square 
+% GROUP:  square 

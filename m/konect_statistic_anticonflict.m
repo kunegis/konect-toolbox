@@ -6,7 +6,7 @@
 % into account.  The computation is restricted to the network's
 % largest connected component. 
 %
-% ATTRIBUTE:  square
+% GROUP:  square
 %
 % PARAMETERS 
 %	A 	Adjacency or biadjacency matrix

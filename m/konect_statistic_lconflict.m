@@ -9,7 +9,7 @@
 % RESULT 
 %	value	
 %
-% ATTRIBUTE:  negative
+% GROUP:  negative
 %
 
 function values = konect_statistic_lconflict(A, format, weights)

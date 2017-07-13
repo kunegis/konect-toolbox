@@ -6,7 +6,7 @@
 % where lambda_min and lambda_max are the smallest and largest
 % eigenvalue of the unweighted adjacency matrix \bar A. 
 %
-% ATTRIBUTE:  square
+% GROUP:  square
 %
 % PARAMETERS 
 %	A		Half-adjacency matrix

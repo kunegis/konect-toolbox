@@ -15,7 +15,7 @@
 %	values 	Columns vector of results
 %		[1] Number of triangles
 %
-% ATTRIBUTE:  square 
+% GROUP:  square 
 %
 
 function values = konect_statistic_triangles(A, format, weights, opts)

@@ -1,7 +1,7 @@
 %
 % Only the clustering coefficient, without extra variants.
 %
-% ATTRIBUTE:  square 
+% GROUP:  square 
 %
 
 function values = konect_statistic_clusco(A, format, weights)

@@ -10,7 +10,7 @@
 % RESULT 
 %	value	The negativity (in the range [0,1])
 %
-% ATTRIBUTE:  negative
+% GROUP:  negative
 %
 
 function value = konect_statistic_negativity(A, format, weights)
