@@ -46,5 +46,5 @@ colors.cocorelinv	= [0.14 0.64 0.43];
 colors.degone		= [0.91 0.00 0.35];
 colors.diameff50	= [0.29 0.70 0.28];
 colors.diameff90	= [0.60 0.64 0.46];
-
+colors.power 		= [0.02 0.19 0.92]; 
 
