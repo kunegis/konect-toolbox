@@ -37,7 +37,10 @@
 %				values are only the largest ones
 %				know. Setting this will not draw the
 %				topmost line.   
-%	enable_axis		(optional, default=1) set the axis
+%	enable_axis		(optional, default=1)
+%				0:  don't set the axis
+%				1:  set the axis from the data
+%				2:  assume an axis is already set and widen it from the data
 %				automatically from the data
 %	line_style		(optional, default = '-')
 %
@@ -78,6 +81,10 @@ if ~exist('line_style', 'var')
     line_style = '-';
 end
 
+if enable_axis == 2
+  axis_old = axis
+end
+
 if length(c) > 0
 
     [values ii] = sort(values);
@@ -102,13 +109,18 @@ if enable_normalization
     xx = xx ./ value_sum; 
 end
 
-if enable_axis
-    ax(1) = xx(1) / factor; 
-    ax(2) = factor * xx(end); 
-    ax(3) = yy(end) / factor;
-    ax(4) = 1 * factor; 
+if enable_axis == 1
+  ax(1) = xx(1) / factor; 
+  ax(2) = factor * xx(end); 
+  ax(3) = yy(end) / factor;
+  ax(4) = 1 * factor; 
+elseif enable_axis == 2
+  ax(1) = min(axis_old(1), xx(1) / factor);
+  ax(2) = max(axis_old(2), factor * xx(end));
+  ax(3) = min(axis_old(3), yy(end) / factor);
+  ax(4) = max(axis_old(4), 1 * factor); 
 else
-    ax = axis(); 
+  ax = axis(); 
 end
 
 if ~enable_largest
