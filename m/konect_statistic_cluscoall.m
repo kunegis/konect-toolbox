@@ -46,7 +46,7 @@ A_abs = A ~= 0;
 values(1) = c; 
 values(7) = c2; 
 
-if weights == consts.SIGNED | weights == consts.WEIGHTED | weights == consts.MULTIWEIGHTED
+if weights == consts.SIGNED | weights == consts.WEIGHTED | weights == consts.MULTIWEIGHTED | weights == consts.MULTISIGNED
     % Note:  we must use "+" instead "|" in order to preserves to -1
     % entries in the matrix. 
     [x c c2] = konect_clusco(konect_signx(A + A')); 

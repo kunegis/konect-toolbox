@@ -59,11 +59,11 @@ t = konect_timer(n);
 
 for u = 1:n
 
-    t = konect_timer_tick(t, u); 
+  t = konect_timer_tick(t, u); 
 
-    % Vectors of neighbors 
-    ao = A(u, :)';
-    ai = A(:, u);
+  % Vectors of neighbors 
+  ao = A(u, :)';
+  ai = A(:, u);
 
     % Indexes of positive and negative neighbors 
     nebs_op = find(ao > 0);
@@ -77,7 +77,7 @@ for u = 1:n
     A_np = A(nebs_in, nebs_op);
     A_nn = A(nebs_in, nebs_on);
 
-    % Number of edges among neighbors 
+    % Sum of edge weights among neighbors 
     user_count = full(sum(sum(A_pp)) - sum(sum(A_pn)) - sum(sum(A_np)) + sum(sum(A_nn)));
     
     % Number of possible neighbor pairs 
@@ -109,8 +109,8 @@ end;
 
 konect_timer_end(t); 
 
-c_global_1 = sum_count / sum_pairs;
-c_global_2 = mean(c_local); 
+c_global_1 = sum_count / sum_pairs
+c_global_2 = mean(c_local)
 
 if abs(c_global_1) > 1
     error(sprintf('*** c_global_1 = %f', c_global_1)); 
