@@ -10,8 +10,8 @@
 %
 % RESULT 
 %	values	Results as column vector
-%		[1] The algebraic conflict \xi
-%		[2] The relative relaxed frustration \xi n / 8 m
+%		[1] The smallest eigenvalue of the signed Laplacian \lambda, based on largest connected component
+%		[2] The relative relaxed frustration \xi = \lambda n / 8 m
 %
 % GROUP:  negative
 %
