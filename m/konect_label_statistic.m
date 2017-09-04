@@ -126,7 +126,7 @@ elseif strcmp(statistic, 'degone')		ret = 'Proportion of degree-one nodes ($d_1$
 elseif strcmp(statistic, 'diameff50'),		ret = '50-percentile effective diameter ($\delta_{0.5}$) [edges]'; 
 elseif strcmp(statistic, 'diameff90'), 		ret = '90-percentile effective diameter ($\delta_{0.9}$) [edges]'; 
 elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)'; 
-elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($T$)'; 
+elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($\tau$)'; 
 elseif strcmp(statistic, 'fconflict'),		ret = 'Relative relaxed frustration ($\xi$)'; 
 elseif strcmp(statistic, 'syngraphyruntime'),   ret = 'Runtime [s]';
   
