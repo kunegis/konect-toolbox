@@ -14,6 +14,9 @@
 %		[3]	BIP:  Number of vertices in right group
 %		[3]	ASYM: Number of vertices with nonzero indegree
 %
+% GROUP+2:  bip
+% GROUP+3:  bip
+%
 
 function values = konect_statistic_size(A, format, weights)
 
