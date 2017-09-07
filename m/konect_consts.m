@@ -7,7 +7,7 @@
 %	names; see below
 %
 
-function [consts symbols_format symbols_weights] = konect_consts()
+function [consts symbols_format symbols_weights labels_format labels_weights] = konect_consts()
 
 consts = {};
 
@@ -53,3 +53,23 @@ symbols_weights{consts.WEIGHTED        } = '$*$';
 symbols_weights{consts.MULTIWEIGHTED   } = '$_*{}^*$';
 symbols_weights{consts.DYNAMIC         } = '$\rightleftarrows$';
 symbols_weights{consts.MULTIPOSWEIGHTED} = '$++$';
+
+%
+% Labels
+%
+
+labels_format{consts.SYM}	= 'Unipartite, undirected';
+labels_format{consts.ASYM}	= 'Unipartite, directed';
+labels_format{consts.BIP}	= 'Bipartite, undirected';
+
+labels_weights{consts.UNWEIGHTED}	= 'Unweighted, no multiple edges';
+labels_weights{consts.POSITIVE}		= 'Unweighted, multiple edges';
+labels_weights{consts.POSWEIGHTED}	= 'Positive weights, no multiple edges';
+labels_weights{consts.SIGNED}		= 'Signed, no multiple edges';
+labels_weights{consts.MULTISIGNED}	= 'Signed, multiple edges';
+labels_weights{consts.WEIGHTED}		= 'Ratings, no multiple edges';
+labels_weights{consts.MULTIWEIGHTED}	= 'Ratings, multiple edges';
+labels_weights{consts.DYNAMIC}		= 'Dynamic';
+labels_weights{consts.MULTIPOSWEIGHTED} = 'Positive weights, multiple edges';
+
+
