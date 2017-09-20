@@ -104,7 +104,7 @@ elseif strcmp(statistic, 'clusco_norm_p')	ret = 'Orthogonalized clustering coeff
 elseif strcmp(statistic, 'triangles_norm_p')	ret = 'Orthogonalized triangle count ($t / (p^3 (n ; 3))$)';
 elseif strcmp(statistic, 'twostars')		ret = 'Wedge count ($s$)'; 
 elseif strcmp(statistic, 'twostars_normuni')	ret = ['Uniformized wedge count ($s' '''' '$)']; 
-elseif strcmp(statistic, 'uniquevolume')	ret = 'Unique edges ($\bar{\bar m}$)';
+elseif strcmp(statistic, 'uniquevolume')	ret = 'Unique edge count ($\bar{\bar m}$)';
 elseif strcmp(statistic, 'lines')		ret = 'Data volume ($m_D$)';
 elseif strcmp(statistic, 'twostars_norm_p')	ret = 'Orthogonalized wedge count'; 
 elseif strcmp(statistic, 'twostars_coef') 	ret = 'Preferential attachment coefficient';
@@ -129,10 +129,12 @@ elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)';
 elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($\tau$)'; 
 elseif strcmp(statistic, 'fconflict'),		ret = 'Relative relaxed frustration ($\xi$)'; 
 elseif strcmp(statistic, 'syngraphyruntime'),   ret = 'Runtime [s]';
+elseif strcmp(statistic, 'avgdegreeasym'), 	ret = 'Directed average degree';
+elseif strcmp(statistic, 'avgmult'),		ret = 'Average edge multiplicity';
+elseif strcmp(statistic, 'inoutassort'), 	ret = 'In-out assortativity'; 
   
 else
     ret= statistic; 
-    %    error(sprintf('*** Invalid statistic %s', statistic)); 
 end
 
 if strcmp(type, 'latex')
