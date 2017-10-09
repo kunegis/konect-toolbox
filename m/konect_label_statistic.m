@@ -116,7 +116,7 @@ elseif strcmp(statistic, 'squares')		ret = 'Square count ($q$)';
 elseif strcmp(statistic, 'tour4')		ret = '4-tour count ($T_4$)'; 
 elseif strcmp(statistic, 'threestars')		ret = 'Claw count ($z$)';
 elseif strcmp(statistic, 'fourstars')		ret = 'Cross count ($x$)';
-elseif strcmp(statistic, 'assortativity')	ret = 'Assortativity ($\rho$)';
+elseif strcmp(statistic, 'assortativity')	ret = 'Degree assortativity ($\rho$)';
 elseif strcmp(statistic, 'mediandist')		ret = 'Median distance ($\delta_M$)';
 elseif strcmp(statistic, 'relmaxdegree')	ret = 'Relative maximum degree ($d_{MR}$)';
 elseif strcmp(statistic, 'cocorel')		ret = 'Relative size of LCC ($N_{rel}$)'; 
@@ -128,9 +128,9 @@ elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)';
 elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($\tau$)'; 
 elseif strcmp(statistic, 'fconflict'),		ret = 'Relative relaxed frustration ($\xi$)'; 
 elseif strcmp(statistic, 'syngraphyruntime'),   ret = 'Runtime [s]';
-elseif strcmp(statistic, 'avgdegreeasym'), 	ret = 'Directed average degree';
-elseif strcmp(statistic, 'avgmult'),		ret = 'Average edge multiplicity';
-elseif strcmp(statistic, 'inoutassort'), 	ret = 'In-out assortativity'; 
+elseif strcmp(statistic, 'avgdegreeasym'), 	ret = 'Directed average degree ($d^{\rightarrow}$)';
+elseif strcmp(statistic, 'avgmult'),		ret = 'Average edge multiplicity ($\tilde{m}$)';
+elseif strcmp(statistic, 'inoutassort'), 	ret = 'In-out assortativity ($\rho^{\pm}$)'; 
   
 else
     ret= statistic; 
@@ -145,6 +145,27 @@ elseif strcmp(type, 'latex-short')
     % Keep what is inside the $s
     ret = regexprep(ret, '^[^\$]+\(\$', '');
     ret = regexprep(ret, '\$\)[^\$]*$', ''); 
+    
+elseif strcmp(type, 'html-short')
+    
+    ret = regexprep(ret, '^[^\$]+\(\$', '');
+    ret = regexprep(ret, '\$\)[^\$]*$', ''); 
+
+    % Individual symbols in Unicode
+    ret = regexprep(ret, '\\gamma', 'γ');
+    ret = regexprep(ret, '\\delta', 'δ');
+    ret = regexprep(ret, '\\rho',   'ρ');
+    ret = regexprep(ret, '\\rightarrow', '→'); 
+    ret = regexprep(ret, '\\pm', '±'); 
+
+    % Sub- and superscripts
+    ret = regexprep(ret, '_\{([^}]+)\}', '<SUB>$1</SUB>'); 
+    ret = regexprep(ret, '\^\{([^}]+)\}', '<SUP>$1</SUP>'); 
+    ret = regexprep(ret, '_(.)', '<SUB>$1</SUB>'); 
+
+    % Accidentals
+    ret = regexprep(ret, '\\bar\{\\bar (.)\}', '$1̿'); 
+    ret = regexprep(ret, '\\tilde\{(.)\}', '$1̃');
     
 elseif strcmp(type, 'matlab')
 
