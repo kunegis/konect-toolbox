@@ -1,6 +1,4 @@
 %
-% The readable names of statistics. 
-%
 % RESULT 
 % 	ret	A string of the format "NAME ($EXPRESSION$)", in
 % 		which NAME is the readable name, and EXPRESSION is a
@@ -16,7 +14,8 @@
 %		'latex-short'	For Latex, only the expression
 %				(without the surrounding $ signs)
 %		'matlab'	For Matlab plots
-%		'matlab-short'	For Matlab plots, only the expression 
+%		'matlab-short'	For Matlab plots, only the expression
+%		'html-name'	For HTML, name of the statistic
 %
 
 function ret = konect_label_statistic(statistic, type)
@@ -161,4 +160,13 @@ elseif strcmp(type, 'matlab-short')
         ret = statistic; 
     end
 
+elseif strcmp(type, 'html-name')
+
+  ret = regexprep(ret, ' \(.*\)', ''); 
+  ret = regexprep(ret, ' \[.*\]', ''); 
+
+else
+
+  error(sprintf('*** Invalid type "%s" for konect_label_statistic.m', type)); 
+  
 end
