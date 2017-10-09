@@ -7,7 +7,15 @@
 % A statistic in KONECT is a numerical characteristic of a network,
 % e.g., the diameter or the clustering coefficient. 
 %
-% PARAMETERS 
+% Note that in this interface, isolated nodes (i.e., nodes without
+% edges) are not considered part of the network -- this is because it
+% allows us to consider the change of a network statistic over time.
+% This difference is relevant for elementary statistics such as the size
+% (number of nodes) and the fill (edge probability).  For advanced
+% statistics such as the clustering coefficient, it does not make a
+% difference. 
+%
+% ARGUMENTS 
 %	statistic	The statistic to compute, as a string 
 %	A		Half-adjacency / biadjacency matrix
 %	format		The network format
@@ -15,7 +23,7 @@
 %	opts		(optional) The variable opts.disp can be
 %			set to control output
 %
-% RESULT 
+% RETURN VALUE
 %	values	Column vector of values.  The first value is the
 %		statistic itself.  Subsequent values may denote
 %		additional values, such as an error on the main value. 
@@ -30,4 +38,3 @@ if ~exist('opts', 'var')
 else
     values = fh(A, format, weights, opts); 
 end
-

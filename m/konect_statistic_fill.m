@@ -6,6 +6,10 @@
 % Note: the definition of the fill in KONECT takes into account that
 % loops are possible. 
 %
+% Note:  As always in KONECT, we consider isolated nodes (i.e., nodes
+% without edges) to *not* be part of the network, because that allows us
+% to consider the change of each statistic over time. 
+%
 % PARAMETERS 
 %	A		Adjacency or biadjacency matrix
 %	format		Format of the network

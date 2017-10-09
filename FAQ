@@ -1,0 +1,6 @@
+______________________________________________________________
+I get "Undefined function or variable 'components'"
+
+-> You need to install the Boost Graph Library (BGL), which the KONECT
+Toolbox is using for certain functions.  See the file 'README'.
+
