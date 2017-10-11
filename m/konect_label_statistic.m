@@ -15,7 +15,9 @@
 %				(without the surrounding $ signs)
 %		'matlab'	For Matlab plots
 %		'matlab-short'	For Matlab plots, only the expression
-%		'html-name'	For HTML, name of the statistic
+%		'html-short'	Symbol of the statistic in HTML, using UTF-8
+%		'html-name'	For HTML, name of the statistic, using
+% 				UTF-8 for special characters  
 %
 
 function ret = konect_label_statistic(statistic, type)
@@ -130,7 +132,7 @@ elseif strcmp(statistic, 'fconflict'),		ret = 'Relative relaxed frustration ($\x
 elseif strcmp(statistic, 'syngraphyruntime'),   ret = 'Runtime [s]';
 elseif strcmp(statistic, 'avgdegreeasym'), 	ret = 'Directed average degree ($d^{\rightarrow}$)';
 elseif strcmp(statistic, 'avgmult'),		ret = 'Average edge multiplicity ($\tilde{m}$)';
-elseif strcmp(statistic, 'inoutassort'), 	ret = 'In-out assortativity ($\rho^{\pm}$)'; 
+elseif strcmp(statistic, 'inoutassort'), 	ret = 'In/outdegree correlation ($\rho^{\pm}$)'; 
   
 else
     ret= statistic; 
@@ -157,7 +159,8 @@ elseif strcmp(type, 'html-short')
     ret = regexprep(ret, '\\rho',   'ρ');
     ret = regexprep(ret, '\\rightarrow', '→'); 
     ret = regexprep(ret, '\\pm', '±'); 
-
+    ret = regexprep(ret, '\|\|', '‖');
+    
     % Sub- and superscripts
     ret = regexprep(ret, '_\{([^}]+)\}', '<SUB>$1</SUB>'); 
     ret = regexprep(ret, '\^\{([^}]+)\}', '<SUP>$1</SUP>'); 
