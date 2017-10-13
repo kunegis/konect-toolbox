@@ -7,7 +7,7 @@
 %	names; see below
 %
 
-function [consts symbols_format symbols_weights labels_format labels_weights] = konect_consts()
+function [consts symbols_format symbols_weights labels_format labels_weights int_format int_weights] = konect_consts()
 
 consts = {};
 
@@ -72,4 +72,20 @@ labels_weights{consts.MULTIWEIGHTED}	= 'Ratings, multiple edges';
 labels_weights{consts.DYNAMIC}		= 'Dynamic';
 labels_weights{consts.MULTIPOSWEIGHTED} = 'Positive weights, multiple edges';
 
+%
+% Internal names
+%
 
+int_format{1} = 'sym';
+int_format{2} = 'asym';
+int_format{3} = 'bip';
+
+int_weights{1} = 'unweighted';
+int_weights{2} = 'positive';
+int_weights{3} = 'posweighted';
+int_weights{4} = 'signed';
+int_weights{5} = 'multisigned';
+int_weights{6} = 'weighted';
+int_weights{7} = 'multiweighted';
+int_weights{8} = 'dynamic';
+int_weights{9} = 'multiposweighted';
