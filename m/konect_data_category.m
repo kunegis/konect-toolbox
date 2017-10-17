@@ -1,7 +1,6 @@
 %
 % Properties of network categories.  All returned variables are
-% structs in which each entry corresponds to a category name (with
-% dashes replaced by underscores).
+% structs in which each entry corresponds to a category name.
 %
 % RESULT 
 %	colors	The color (as [r g b] vector) used for representing
@@ -34,7 +33,7 @@ colors.Metabolic		= [0.58 0.70 0.67];
 colors.Misc			= [0.85 0.95 0.59];
 colors.OnlineContact		= [0.27	0.54 0.95];
 colors.Rating			= [0.70 0.70 0   ];
-colors.Social			= [0.8  0.7  0   ];
+colors.Social			= [0.10 0.10 0.38];
 colors.Software			= [0.10 0.37 0.10];
 colors.Text			= [0.43 0.52 0.82];
 colors.Trophic			= [0.40 0.42 0.61];
