@@ -7,7 +7,7 @@
 %		the category 
 %
 
-function [colors vertices edges markers letters] = konect_data_category()
+function [colors vertices edges markers letters longname] = konect_data_category()
 
 %
 % Color used for each category
@@ -147,3 +147,30 @@ letters.Folksonomy		= 'O';
 letters.Interaction		= 'I';
 letters.Rating			= 'R';
 letters.Text			= 'T';
+
+longname = struct();
+longname.Affiliation		= 'Affiliation network';
+longname.Animal			= 'Animal network';
+longname.Authorship		= 'Authorship network';
+longname.Citation		= 'Citation network';
+longname.Coauthorship		= 'Co-authorship network';
+longname.Cocitation		= 'Co-citation network';
+longname.Communication		= 'Communication network';
+longname.Computer		= 'Computer network';
+longname.Feature		= 'Feature network';
+longname.Folksonomy		= 'Folksonomy';
+longname.HumanContact		= 'Human contact network';
+longname.HumanSocial		= 'Human social network';
+longname.Hyperlink		= 'Hyperlink network';
+longname.Infrastructure		= 'Infrastructure network';
+longname.Interaction		= 'Interaction network';
+longname.Lexical		= 'Lexical network';
+longname.Metabolic		= 'Metabolic network';
+longname.Misc			= 'Miscellaneous network';
+longname.OnlineContact		= 'Online contact network';
+longname.Rating			= 'Rating network';
+longname.Social			= 'Online social network';
+longname.Software		= 'Software network';
+longname.Text			= 'Text network';
+longname.Trophic		= 'Trophic network';
+
