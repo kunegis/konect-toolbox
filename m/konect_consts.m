@@ -51,7 +51,7 @@ symbols_weights{consts.SIGNED          } = '$\pm$';
 symbols_weights{consts.MULTISIGNED     } = '$\stackrel{+}{=}$';
 symbols_weights{consts.WEIGHTED        } = '$*$';
 symbols_weights{consts.MULTIWEIGHTED   } = '$_*{}^*$';
-symbols_weights{consts.DYNAMIC         } = '$\rightleftharpoon$';
+symbols_weights{consts.DYNAMIC         } = '$\rightleftharpoons$';
 symbols_weights{consts.MULTIPOSWEIGHTED} = '$++$';
 
 %
