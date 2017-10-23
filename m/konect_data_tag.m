@@ -45,5 +45,5 @@ tag_name.path			= 'Paths';
 tag_name.missingorientation	= 'Orientation';
 tag_name.missingmultiplicity	= 'Multiplicity';
 tag_name.kcore			= '<I>k</I>-Core';
-tag_name.lcc			= 'Largest connected component';
+tag_name.lcc			= 'Connectedness';
 
