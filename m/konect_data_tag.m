@@ -8,11 +8,15 @@
 
 function [tag_list tag_text tag_name] = konect_data_tag()
 
+% The order is important here.  This order is how the tags are shown to
+% the user.  
 tag_list = { ...
+	     'skew', 'path', ...
 	     'nonreciprocal', 'acyclic', 'loop', 'tournament', ...
 	     'trianglefree', 'zeroweight', 'incomplete', 'join', ...
-	     'path', 'missingorientation', 'missingmultiplicity', ...
-	     'kcore', 'lcc' };
+	     'missingorientation', 'missingmultiplicity', ...
+	     'kcore', 'lcc', ...
+	   };
 	     
   
 tag_text = struct();
@@ -30,6 +34,7 @@ tag_text.missingorientation	= 'Is not directed, but the underlying data is';
 tag_text.missingmultiplicity	= 'Does not have multiple edges, but the underlying data has';
 tag_text.kcore			= 'Only nodes with degree larger than a given threshold are included';
 tag_text.lcc			= 'Only the largest connected component of the original data is included';
+tag_text.skew			= 'Inverted edges can be interpreted as negated edges';
 
 tag_name = struct();
 
@@ -46,4 +51,5 @@ tag_name.missingorientation	= 'Orientation';
 tag_name.missingmultiplicity	= 'Multiplicity';
 tag_name.kcore			= '<I>k</I>-Core';
 tag_name.lcc			= 'Connectedness';
+tag_name.skew			= 'Skew-symmetry';
 

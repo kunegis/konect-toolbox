@@ -13,7 +13,8 @@
 %			typically added.  This property is mainly
 %			used for automatic plotting. 
 %	integer		Whether the statistic is an integer 
-%	percent		Whether the statistic is between 0 and 1
+%	percent		Whether the statistic is between 0 and 1 (when
+% 			not NEGATIVE), or between -1 and +1 (when NEGATIVE)
 %	negative	Whether the statistic can get negative 
 %
 
@@ -218,16 +219,18 @@ integer.avgmult			= 0;
 integer.tconflict		= 0;
 integer.fconflict		= 0; 
 
-percent.assortativity		= 0;
+percent.assortativity		= 1;
 percent.alcon			= 0;
 percent.avgdegree		= 0; 
 percent.avgdegreeasym		= 0; 
 percent.avgmult			= 0;
 percent.clusco			= 1;
 percent.coco			= 0; 
+percent.coco__2			= 1; 
 percent.cocorel			= 1; 
 percent.cocorelinv		= 1; 
 percent.cocos			= 0; 
+percent.cocos__2		= 1; 
 percent.conflict__2		= 1;
 percent.diam			= 0;
 percent.degone			= 0;
@@ -238,20 +241,21 @@ percent.dconflict		= 1;
 percent.fconflict		= 1;
 percent.fill			= 1; 
 percent.gini 			= 1;
-percent.inoutassort		= 0;
-percent.inoutassort__3		= 0;
-percent.inoutassort__5		= 0;
-percent.inoutassort__7		= 0;
-percent.inoutassort__9		= 0;
+percent.inoutassort		= 1;
+percent.inoutassort__3		= 1;
+percent.inoutassort__5		= 1;
+percent.inoutassort__7		= 1;
+percent.inoutassort__9		= 1;
 percent.maxdegree		= 0; 
 percent.meandist		= 0;
 percent.mediandist		= 0;
+percent.negativity		= 1;
 percent.fourstars		= 0;
 percent.power			= 0;
 percent.power2			= 0;
 percent.snorm			= 0;
 percent.reciprocity		= 1; 
-percent.relmaxdegree		= 0;
+percent.relmaxdegree		= 1;
 percent.size			= 0;
 percent.size__2			= 0;
 percent.size__3			= 0;
@@ -272,8 +276,10 @@ negative.avgdegreeasym		= 0;
 negative.avgmult		= 0; 
 negative.clusco			= 0; 
 negative.coco			= 0; 
+negative.coco__2		= 0; 
 negative.cocorel		= 0;
 negative.cocos			= 0; 
+negative.cocos__2		= 0; 
 negative.dentropyn		= 0; 
 negative.diam			= 0;
 negative.diameff50		= 0;
@@ -284,6 +290,7 @@ negative.gini			= 0;
 negative.inoutassort		= 1; 
 negative.maxdegree		= 0; 
 negative.meandist		= 0; 
+negative.negativity		= 0; 
 negative.power			= 0; 
 negative.power2			= 0; 
 negative.reciprocity	 	= 0;
