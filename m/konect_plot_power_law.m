@@ -136,7 +136,12 @@ h = stairs(x, y, 'LineWidth', line_width, 'Color', color, 'LineStyle', line_styl
 set(gca, 'XScale', 'log', 'YScale', 'log');
 
 if enable_axis
-    axis(ax); 
+  ax
+  % This fails if all values are equal -- in which case we prefer the
+  % default axes  
+  if ax(1) < ax(2) && ax(3) < ax(4)
+    axis(ax);
+  end
 end
 
 set(gca, 'FontSize', font_size); 

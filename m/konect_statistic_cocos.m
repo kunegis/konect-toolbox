@@ -13,7 +13,7 @@
 %		    nodes (N_s)
 %		[2] Relative size (N_s / n)
 %
-% GROUP:  asym 
+% GROUP:  asym
 %
 
 function values = konect_statistic_cocos(A, format, weights)

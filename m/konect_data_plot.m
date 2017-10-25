@@ -13,7 +13,7 @@ function [labels_plot] = konect_data_plot()
   
 labels_plot = struct();
 
-labels_plot.assortativity		= 'degree assortativity plot'; 
+labels_plot.assortativity		= 'degree assortativity'; 
 labels_plot.bidd			= 'cumulative degree distribution';
 labels_plot.cluscod			= 'clustering coefficient distribution'; 
 labels_plot.degcc			= 'average neighbor degree distribution'; 
@@ -23,8 +23,8 @@ labels_plot.diadens			= 'diameter/density evolution';
 labels_plot.distr___sym			= 'spectral distribution of the adjacency matrix';
 labels_plot.distr___sym__n		= 'spectral distribution of the normalized adjacency matrix'; 
 labels_plot.distr___lap			= 'spectral distribution of the Laplacian'; 
-labels_plot.hopdistr			= 'hop plot'; 
-labels_plot.hopdistr_time___full	= 'temporal hop plot'; 
+labels_plot.hopdistr			= 'hop distribution'; 
+labels_plot.hopdistr_time___full	= 'temporal hop distribution'; 
 labels_plot.layout			= 'Fruchterman–Reingold graph drawing';
 labels_plot.lorenz			= 'Lorenz curve'; 
 labels_plot.lybl			= 'double Laplacian graph drawing';

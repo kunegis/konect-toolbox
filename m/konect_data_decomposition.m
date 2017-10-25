@@ -1,15 +1,15 @@
 %
 % Metadata of decompositions.
 %
-% RESULT 
-%	data_decomposition 	Struct of values 
+% RETURN VALUES 
+%	data_decomposition 	Struct of values
 %
-% PARAMETERS 
+% ARGUMENTS 
 %	decomposition
 %	format		(optional) Only used for the names ; default to ASYM
 %
 
-function data_decomposition = konect_data_decomposition(decomposition, format)
+function [data_decomposition] = konect_data_decomposition(decomposition, format)
 
 consts = konect_consts(); 
 
@@ -119,4 +119,7 @@ end
 %
 
 data_decomposition.real = ...
-  ~ (strcmp(decomposition, 'diag')); 
+~ (strcmp(decomposition, 'diag') | strcmp(decomposition, 'diag-n') | ...
+   strcmp(decomposition, 'stoch2') | strcmp(decomposition, 'stoch') | ...
+   strcmp(decomposition, 'mskew'));
+
