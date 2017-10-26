@@ -2,11 +2,9 @@
 
 This is a toolbox for the analysis of large complex networks written in
 Matlab, but also largely compatible with GNU Octave.  It is part of the
-KONECT project by Jérôme Kunegis at the University of Namur, Belgium,
-with web hosting provided by the Institute for Web Science and
-Technologies (WeST) at the University of Koblenz-Landau, Germany.
+KONECT project by Jérôme Kunegis at the University of Namur, Belgium:
 
-http://konect.uni-koblenz.de/
+http://konect.cc/
 
 This toolbox implements individual network analysis functions,
 statistics and some machine learning methods.  If you want a complete
