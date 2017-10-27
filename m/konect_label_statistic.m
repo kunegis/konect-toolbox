@@ -86,6 +86,10 @@ elseif strcmp(statistic, 'asymmetry')		ret = 'Spectral asymmetry ($\zeta$)';
 elseif strcmp(statistic, 'own')			ret = 'Balanced inequality ratio ($P$)'; 
 elseif strcmp(statistic, 'radius')		ret = 'Spectral radius ($\rho$)'; 
 elseif strcmp(statistic, 'maxdegree')		ret = 'Maximum degree ($d_{max}$) [edges]'; 
+elseif strcmp(statistic, 'maxdegree+2')		ret = 'Maximum outdegree ($d^+_{max}$) [edges]'; 
+elseif strcmp(statistic, 'maxdegree+3')		ret = 'Maximum indegree ($d^-_{max}$) [edges]'; 
+elseif strcmp(statistic, 'maxdegree+4')		ret = 'Maximum left degree ($d^1_{max}$) [edges]'; 
+elseif strcmp(statistic, 'maxdegree+5')		ret = 'Maximum right degree ($d^2_{max}$) [edges]'; 
 elseif strcmp(statistic, 'jain') 		ret = ['Jain' '''' 's index ($J$)']; 
 elseif strcmp(statistic, 'prefatt') 		ret = 'Preferential attachment exponent ($\beta$)'; 
 elseif strcmp(statistic, 'prefatt+2') 		ret = 'Root-mean-square logarithmic error ($\epsilon$)'; 
@@ -153,6 +157,16 @@ elseif strcmp(type, 'html-short')
     ret = regexprep(ret, '^[^\$]+\(\$', '');
     ret = regexprep(ret, '\$\)[^\$]*$', ''); 
 
+    % Sub- and superscripts
+    ret = regexprep(ret, '_\{([^}]+)\}', '<SUB>$1</SUB>'); 
+    ret = regexprep(ret, '\^\{([^}]+)\}', '<SUP>$1</SUP>'); 
+    ret = regexprep(ret, '_(.)', '<SUB>$1</SUB>'); 
+    ret = regexprep(ret, '\^(.)', '<SUP>$1</SUP>'); 
+
+    % Accidentals
+    ret = regexprep(ret, '\\bar\{\\bar (.)\}', '$1̿'); 
+    ret = regexprep(ret, '\\tilde\{(.)\}', '$1̃');
+    
     % Individual symbols in Unicode
     ret = regexprep(ret, '\\gamma', 'γ');
     ret = regexprep(ret, '\\delta', 'δ');
@@ -161,15 +175,7 @@ elseif strcmp(type, 'html-short')
     ret = regexprep(ret, '\\rightarrow', '→'); 
     ret = regexprep(ret, '\\pm', '±'); 
     ret = regexprep(ret, '\|\|', '‖');
-    
-    % Sub- and superscripts
-    ret = regexprep(ret, '_\{([^}]+)\}', '<SUB>$1</SUB>'); 
-    ret = regexprep(ret, '\^\{([^}]+)\}', '<SUP>$1</SUP>'); 
-    ret = regexprep(ret, '_(.)', '<SUB>$1</SUB>'); 
-
-    % Accidentals
-    ret = regexprep(ret, '\\bar\{\\bar (.)\}', '$1̿'); 
-    ret = regexprep(ret, '\\tilde\{(.)\}', '$1̃');
+    ret = regexprep(ret, '-', '−');
     
 elseif strcmp(type, 'matlab')
 
