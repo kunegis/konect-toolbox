@@ -51,7 +51,7 @@ elseif strcmp(statistic, 'cluscoall+5'),    	ret = 'Relative signed clustering c
 elseif strcmp(statistic, 'cluscoall+7'),    	ret = 'Clustering coefficient, variant 2 ($c_2$)'; 
 elseif strcmp(statistic, 'power'),		ret = 'Power law exponent ($\gamma$)'; 
 elseif strcmp(statistic, 'powerv'),		ret = 'Power law exponent ($\gamma$)'; 
-elseif strcmp(statistic, 'power2'),		ret = 'Power law exponent ($\gamma$)'; 
+elseif strcmp(statistic, 'power2'),		ret = 'Tail power law exponent ($\gamma_t$)'; 
 elseif strcmp(statistic, 'rank'), 		ret = 'Rank ($\syRank$)'; 
 elseif strcmp(statistic, 'alcon')		ret = 'Algebraic connectivity ($a$)';
 elseif strcmp(statistic, 'alconn')		ret = 'Normalized algebraic connectivity ($a_n$)';
@@ -201,3 +201,4 @@ else
   error(sprintf('*** Invalid type "%s" for konect_label_statistic.m', type)); 
   
 end
+
