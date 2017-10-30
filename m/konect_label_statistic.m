@@ -201,4 +201,3 @@ else
   error(sprintf('*** Invalid type "%s" for konect_label_statistic.m', type)); 
   
 end
-
