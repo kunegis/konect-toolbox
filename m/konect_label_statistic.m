@@ -123,6 +123,7 @@ elseif strcmp(statistic, 'tour4')		ret = '4-Tour count ($T_4$)';
 elseif strcmp(statistic, 'threestars')		ret = 'Claw count ($z$)';
 elseif strcmp(statistic, 'fourstars')		ret = 'Cross count ($x$)';
 elseif strcmp(statistic, 'assortativity')	ret = 'Degree assortativity ($\rho$)';
+elseif strcmp(statistic, 'assortativity+2')	ret = 'Degree assortativity p-value ($p_{\rho}$)';
 elseif strcmp(statistic, 'mediandist')		ret = 'Median distance ($\delta_M$)';
 elseif strcmp(statistic, 'relmaxdegree')	ret = 'Relative maximum degree ($d_{MR}$)';
 elseif strcmp(statistic, 'cocorel')		ret = 'Relative size of LCC ($N^{rel}$)'; 
