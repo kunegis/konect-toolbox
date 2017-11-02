@@ -30,13 +30,20 @@
 %
 % The following colors are used in KONECT plots: 
 %
-% blue:	spectrum
+% blue:	general color for plot lines and points
+% spectrum:   orange/brown 
 % red:	runtime
 % positive/negative values:  green/red, respectively
 % left/right distributions in bipartite graphs:  red/green
 %    (consistent with navigation lights)
 % outlinks/inlinks:  red/green (consistent with left/right
 %    distributions in bipartite networks) 
+%
+% OTHER SETTINGS
+%
+% set(gca, 'XMinorTick', 'on');
+% set(gca, 'YMinorTick', 'on'); 
+% set(gca, 'TickLength', [0.05 0.05]); 
 %
 % NOTES 
 % 
