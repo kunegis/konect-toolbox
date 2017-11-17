@@ -53,6 +53,8 @@
 
 function konect_print(filename)
 
+fprintf(1, 'konect_print(%s)\n', filename);   
+  
 % In Octave, use some better fonts
 if konect_usingoctave()
   FN = findall(0,'-property','FontName');
@@ -65,6 +67,8 @@ try
     % "epsc" stands for "EPS color".  The "-d" options sets the device. 
     print(filename, '-depsc'); 
 
+    fprintf(1, '\tdone printing %s\n', filename);   
+    
 catch err
 
   % Print the error 
