@@ -27,8 +27,8 @@ else
   A = (A ~= 0); 
 end
 
-d_out = sum(A,2);
-d_in  = sum(A,1)';
+d_out = full(sum(A,2));
+d_in  = full(sum(A,1)');
 
 values = zeros(10,1) * NaN;
 
