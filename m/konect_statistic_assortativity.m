@@ -35,8 +35,8 @@ if format == consts.SYM | format == consts.ASYM
 
     [x y z] = find(A); 
     
-    p = d(x); 
-    q = d(y); 
+    p = full(d(x));
+    q = full(d(y));
 
     [rho pvalue] = corr(p, q)
 
@@ -49,8 +49,8 @@ elseif format == consts.BIP
 
     [x y z] = find(A);
 
-    p = d1(x);
-    q = d2(y); 
+    p = full(d1(x));
+    q = full(d2(y)); 
 
     [rho pvalue] = corr(p, q)
 
