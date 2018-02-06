@@ -31,7 +31,9 @@ if ~exist('epsi', 'var')
 end
 
 % Initialize the Matlab random number generator
-RandStream.setDefaultStream(RandStream('mt19937ar','seed',sum(100*clock)));
+rng('shuffle')
+% The following line was broken by Matlab 2016b.
+%% RandStream.setDefaultStream(RandStream('mt19937ar','seed',sum(100*clock)));
 
 fprintf(1, 'Diameter (%d * %d, %d)...\n', size(A,1), size(A,2), nnz(A)); 
 
@@ -43,7 +45,7 @@ iteration_count_max = m;
 % Minimum number of batches to compute
 iteration_count_min = floor(m * 0.000001); 
 
-al = A ~= 0; 
+al = double(A ~= 0); 
 
 % number of paths computed
 count = 0; 

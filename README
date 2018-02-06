@@ -52,7 +52,7 @@ Each function is documented in its source file.
 The source files contain UTF-8 encoded text in the comments; the rest is
 ASCII.  
 
-The functions are used from both Matlab and GNU Octave.  Since none of
+The functions are used from both GNU Octave Matlab and Matlab.  Since none of
 these is properly standardised, we can't assure that all versions will
 work -- when in doubt, ask. 
 
