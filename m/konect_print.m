@@ -20,8 +20,12 @@
 %
 % SIZE 
 %
+% For Matlab:
 % font_size = 22;  % 18 when the labels contain subscripts 
-% line_width = 3; 
+% line_width = 3;
+%
+% For Octave:
+% line_width = 14; 
 %
 % COLORS 
 %

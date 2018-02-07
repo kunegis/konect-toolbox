@@ -32,13 +32,18 @@ variable.
 
 === Requirements ===
 
-Some functions need BGL, the Boost Graph Library.  
+Some functions need Matlab-BGL, the Matlab port of the Boost Graph
+Library.    
 
-Installation of BGL:
-* Download version 4.0.1 from website (newer versions may not work)
-* unzip it
-* (on some systems:  install libstdc++5 from http://packages.debian.org/stable/base/libstdc++5)
-* symlink the unzipped matlab_bgl to here
+Installation of Matlab-BGL:
+* Download version 4.0.1 from the Matlab-BGL website (newer versions may
+  not work) 
+* Unzip it somewhere where you'll keep it
+* (On a few old Debian-based systems, we needed to install libstdc++5 from http://packages.debian.org/stable/base/libstdc++5) 
+* Make sure matlab_bgl/ is the the Matlab path.  This is necessary for
+  both GNU Octave and Matlab.  For instance, do
+	export MATLABPATH="$MATLABPATH:~/matlab_bgl/"
+  (But probably you have your own way of setting the Matlab path.)
 
 === Usage ===
 

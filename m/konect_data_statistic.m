@@ -20,6 +20,7 @@
 
 function [logarithmic integer percent negative] = konect_data_statistic()
 
+logarithmic.anticonflict	= 1;
 logarithmic.avgdegree		= 1;
 logarithmic.avgdegree__2    	= 1;
 logarithmic.avgdegree__3    	= 1;
@@ -80,7 +81,6 @@ logarithmic.prefatt__3		= 0;
 logarithmic.patest 		= 0;
 logarithmic.reciprocity		= 0;
 logarithmic.triangles 		= 1; 
-logarithmic.anticonflict	= 1;
 logarithmic.oddcycles		= 0; 
 logarithmic.nonbip		= 0; 
 logarithmic.nonbipn		= 1;
@@ -128,6 +128,7 @@ logarithmic.volume 		= 1;
 
 integer.alcon			= 0;
 integer.alconn			= 0;
+integer.anticonflict		= 0;
 integer.avgdegree		= 0;
 integer.avgdegree__2		= 0;
 integer.avgdegree__3		= 0;
@@ -184,7 +185,6 @@ integer.prefatt__3		= 0;
 integer.patest			= 0; 
 integer.reciprocity		= 0; 
 integer.triangles		= 1; 
-integer.anticonflict		= 0;
 integer.oddcycles		= 0; 
 integer.nonbip			= 0; 
 integer.nonbipn			= 0; 
@@ -234,6 +234,7 @@ integer.tconflict		= 0;
 integer.fconflict		= 0; 
 
 percent.alcon			= 0;
+percent.anticonflict		= 1; 
 percent.assortativity		= 1;
 percent.assortativity__2	= 1;
 percent.avgdegree		= 0; 
@@ -271,6 +272,8 @@ percent.maxdegree__5		= 0;
 percent.meandist		= 0;
 percent.mediandist		= 0;
 percent.negativity		= 1;
+percent.nonbip		 	= 1;
+percent.nonbipn 		= 1; 
 percent.fourstars		= 0;
 percent.power			= 0;
 percent.power2			= 0;
@@ -291,6 +294,7 @@ percent.uniquevolume		= 0;
 percent.volume			= 0;
 
 negative.alcon			= 0; 
+negative.anticonflict		= 0; 
 negative.assortativity		= 1; 
 negative.assortativity__2	= 0; 
 negative.avgdegree		= 0; 
@@ -319,6 +323,8 @@ negative.maxdegree__4		= 0;
 negative.maxdegree__5		= 0; 
 negative.meandist		= 0; 
 negative.negativity		= 0; 
+negative.nonbip			= 0; 
+negative.nonbipn		= 0;
 negative.power			= 0; 
 negative.power2			= 0; 
 negative.reciprocity	 	= 0;
