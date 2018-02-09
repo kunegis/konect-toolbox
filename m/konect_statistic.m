@@ -2,7 +2,7 @@
 % Compute a network statistic, i.e., a numerical characteric of a
 % network.  This is a wrapper function that takes the name of the
 % statistic as input and calls the actual function.  The functions
-% for each statistic have names konect_statistic_$STATISTIC(). 
+% for each statistic have names konect_statistic_$statistic(). 
 %
 % A statistic in KONECT is a numerical characteristic of a network,
 % e.g., the diameter or the clustering coefficient. 

@@ -1,3 +1,7 @@
+%
+% The median distance between nodes in the graph.  This is related to
+% the 50-percentile effective diameter. 
+%
 
 function values = konect_statistic_mediandist(A, format, weights)
 

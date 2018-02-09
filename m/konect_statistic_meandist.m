@@ -1,3 +1,6 @@
+%
+% The average distance between nodes of the graph. 
+%
 
 function values = konect_statistic_meandist(A, format, weights)
 
