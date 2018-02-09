@@ -23,6 +23,11 @@
 %		[5]	Average unique left degree (BIP)
 %		[6]	Average unique right degree (BIP)
 %
+% GROUP+2:   bip
+% GROUP+3:   bip
+% GROUP+5:   bip
+% GROUP+6:   bip
+%
 
 function values = konect_statistic_avgdegree(A, format, weights)
 

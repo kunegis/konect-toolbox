@@ -18,12 +18,13 @@
 %		[7-12] same with [clusco2, i.e., mean of local
 %			clustering coefficients]
 %
-% GROUP:  square 
-% GROUP+3:  squarenegative
-% GROUP+4:  squarenegative
-% GROUP+5:  squarenegative
-% GROUP+6:  squarenegative
-% GROUP+9:  squarenegative
+% GROUP:     square 
+% GROUP+2:   asym
+% GROUP+3:   squarenegative
+% GROUP+4:   squarenegative
+% GROUP+5:   squarenegative
+% GROUP+6:   squarenegative
+% GROUP+9:   squarenegative
 % GROUP+10:  squarenegative
 % GROUP+11:  squarenegative
 % GROUP+12:  squarenegative

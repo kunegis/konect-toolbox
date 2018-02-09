@@ -11,13 +11,13 @@
 %	values	The spectral norm 
 %
 
-function values = konect_statistic_snorm(a, format, weights, opts) 
+function values = konect_statistic_snorm(A, format, weights, opts) 
 
 if ~exist('opts', 'var'),    
     opts = struct();     
     opts.disp = 2; 
 end
 
-[u d] = konect_decomposition('sym', a, 1, format, weights, opts);
-values = abs(d(1,1));
+[U D] = konect_decomposition('sym', A, 1, format, weights, opts);
 
+values(1) = abs(D(1,1));
