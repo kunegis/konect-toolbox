@@ -11,7 +11,12 @@
 %		[1]	Size of largest connected component
 %		[2]	Relative size, i.e., [1] divided by size of network
 %		[3,5]	Left/right numbers (BIP only)
-%		[4,6]	Left/right relative cocos (BIP only) 
+%		[4,6]	Left/right relative coco (BIP only) 
+%
+% GROUP+3:  bip
+% GROUP+4:  bip
+% GROUP+5:  bip
+% GROUP+6:  bip
 %
 
 function values = konect_statistic_coco(A, format, weights)
@@ -36,4 +41,3 @@ else
     values = [ coco ; coco / size(A,1) ]; 
 
 end
-

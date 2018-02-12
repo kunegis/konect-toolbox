@@ -14,7 +14,9 @@
 %	weights
 %
 % RESULT 
-%	values	The smallest eigenvalue; zero for bipartite networks 
+%	values
+%		[1] The smallest eigenvalue * n/(8m); zero for bipartite networks
+%		[2] The eigenvalue it self [nonbipal], \chi 
 %
 
 function values = konect_statistic_anticonflict(A, format, weights)
@@ -60,4 +62,4 @@ anticonflict = lambda_min_K * n / 8 / m
 assert(anticonflict >= 0);
 assert(anticonflict <= 0.5); 
 
-values = [ anticonflict ]; 
+values = [ anticonflict ; lambda_min_K ]; 
