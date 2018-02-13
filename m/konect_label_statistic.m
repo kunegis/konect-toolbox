@@ -185,6 +185,7 @@ elseif strcmp(type, 'html-short')
     ret = regexprep(ret, '\\delta', 'δ');
     ret = regexprep(ret, '\\eta',   'η');
     ret = regexprep(ret, '\\zeta',  'ζ');
+    ret = regexprep(ret, '\\lambda','λ'); 
     ret = regexprep(ret, '\\nu',    'ν'); 
     ret = regexprep(ret, '\\xi',    'ξ'); 
     ret = regexprep(ret, '\\pi',    'π'); 

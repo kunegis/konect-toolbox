@@ -8,12 +8,15 @@
 %
 % RESULTS 
 %	values 	Spectral separation
+%		[1]  | lambda1/lambda2 |
+%		[2]  | lambda2/lambda1 |
 %
 
 function values = konect_statistic_separation(A, format, weights)
 
 opts.disp = 2;
 
-[u d] = konect_decomposition('sym', a, 2, format, weights, opts);
+[U D] = konect_decomposition('sym', A, 2, format, weights, opts);
 
-values = abs(d(1,1) / d(2,2));
+values = [ abs(D(1,1) / D(2,2)); ...
+	   abs(D(2,2) / D(1,1)) ];
