@@ -1,4 +1,8 @@
 %
+% The name and symbol of all statistics.  This file contains all
+% metadata that is non-mathematical, i.e., all metadata that does not
+% change computations.  
+% 
 % RESULT 
 % 	ret	A string of the format "NAME ($EXPRESSION$)", in
 % 		which NAME is the readable name, and EXPRESSION is a
@@ -27,7 +31,20 @@ if ~exist('type', 'var')
 end
 
 %
-% Note:  the Latex expressions must be compatible with Matlab, which
+% For each statistic and substatistic, there is one line below.
+% Substatistics are indicated with the '+' sign, as everywhere in
+% KONECT.  The given string contains the English name of the statistic,
+% the symbol, and the units.
+%
+% * Name:  This is the label used to represent the statistic; it
+%   shouldn't be too long as we use this in axis labels, etc.
+% * Symbol:  This is the Latex code between $...$.  It should be short
+%   too.  Only simple Latex math is used, namely that which can be
+%   converted to HTML by the code at the end of this file. 
+% * Unit:  (optional) This is the unit between [brackets].  Not used
+%   much.
+%
+% The Latex expressions must be compatible with Matlab, which
 % means that we don't use \mathrm{...}, which appears in quite a few
 % of the official expressions in the KONECT Handbook. 
 %
@@ -129,8 +146,9 @@ elseif strcmp(statistic, 'twostars_perf')	ret = 'Twostars perf';
 elseif strcmp(statistic, 'volume_normuni')	ret = ['Uniformized volume ($m' '''' '$)']; 
 elseif strcmp(statistic, 'meandist')		ret = 'Mean distance ($\delta_m$)'; 
 elseif strcmp(statistic, 'squares')		ret = 'Square count ($q$)'; 
-elseif strcmp(statistic, 'tour4')		ret = '4-Tour count ($T_4$)'; 
+elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($\tau$)'; 
 elseif strcmp(statistic, 'threestars')		ret = 'Claw count ($z$)';
+elseif strcmp(statistic, 'tour4')		ret = '4-Tour count ($T_4$)'; 
 elseif strcmp(statistic, 'fourstars')		ret = 'Cross count ($x$)';
 elseif strcmp(statistic, 'assortativity')	ret = 'Degree assortativity ($\rho$)';
 elseif strcmp(statistic, 'assortativity+2')	ret = 'Degree assortativity p-value ($p_{\rho}$)';
@@ -142,7 +160,6 @@ elseif strcmp(statistic, 'degone')		ret = 'Proportion of degree-one nodes ($d_1$
 elseif strcmp(statistic, 'diameff50'),		ret = '50-Percentile effective diameter ($\delta_{0.5}$) [edges]'; 
 elseif strcmp(statistic, 'diameff90'), 		ret = '90-Percentile effective diameter ($\delta_{0.9}$) [edges]'; 
 elseif strcmp(statistic, 'dconflict'),		ret = 'Dyadic conflict ($\eta$)'; 
-elseif strcmp(statistic, 'tconflict'),		ret = 'Triadic conflict ($\tau$)'; 
 elseif strcmp(statistic, 'fconflict'),		ret = 'Spectral signed frustration ($\phi$)'; 
 elseif strcmp(statistic, 'syngraphyruntime'),   ret = 'Runtime [s]';
 elseif strcmp(statistic, 'avgdegreeasym'), 	ret = 'Directed average degree ($d^{\rightarrow}$)';

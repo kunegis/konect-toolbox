@@ -1,4 +1,8 @@
+%
+% The triadic conflict, i.e., the proportion of unbalanced triangles.  
+%
 % GROUP:  squarenegative
+%
 
 function [value] = konect_statistic_tconflict(A, format, weights)
 
