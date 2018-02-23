@@ -6,14 +6,21 @@
 % coefficient.  
 %
 % PARAMETERS 
-%	a	Adjacency / biadjacency matrix
+%	A	Adjacency / biadjacency matrix
 %	format
 % 	weights
 %
 % RESULT 
 %	values	The "own" values
 %		[1] 	Total 
-%		[2,3] 	Left/right (only ASYM and BIP) 
+%		[2,3] 	Left/right (only BIP) 
+%		[4,5] 	Out/in     (only ASYM) 
+%
+% GROUP+2:  bip
+% GROUP+3:  bip
+% GROUP+4:  asym
+% GROUP+5:  asym
+% 
 %
 
 function values = konect_statistic_own(A, format, weights)
@@ -44,7 +51,15 @@ if format == consts.BIP | format == consts.ASYM
     else
         q = []; 
     end
-    
-    values = [ values ; konect_own(x, q) ; konect_own(y, q) ]; 
 
+    if format == consts.BIP
+      values = [ values ; konect_own(x, q) ; konect_own(y, q) ; NaN ; NaN ];
+    elseif format == consts.ASYM
+      values = [ values ; NaN ; NaN ; konect_own(x, q) ; konect_own(y, q) ];
+    else
+      error('***'); 
+    end
+
+else
+  values = [ values ; NaN ; NaN ; NaN ; NaN ]; 
 end

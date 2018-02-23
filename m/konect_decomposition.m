@@ -533,22 +533,42 @@ switch decomposition
 
   case 'lapdiag'
 
+    % This is a deprecated variant, in which the total degree matrix is
+    % used -- use [lapdiag2] instead 
     if format ~= consts.ASYM, error('*** Only applies to directed networks'); end; 
 
     [A cc n] = konect_connect_matrix_square(A); 
-
-    a_abs = konect_absx(A); 
+    A_abs = konect_absx(A); 
+    l = spdiags(sum(A_abs,2) + sum(A_abs,1)', [0], n, n) - A; 
+    r = min(r, n-2);
     
-    l = spdiags(sum(a_abs,2) + sum(a_abs,1)', [0], n, n) - A; 
-
     [U D] = konect_eigl(l, r, opts);
-
+    sort(diag(D))'
+    
     % do V = pinv(U)' it using the economic full SVD
     [uu dd vv] = svd(U, 'econ');
     V = uu * pinv(dd) * vv'; 
 
     U = konect_connect_back(cc, U); 
 
+  case 'lapdiag2'
+
+    if format ~= consts.ASYM, error('*** Only applies to directed networks'); end; 
+
+    [A cc n] = konect_connect_matrix_square(A); 
+    A_abs = konect_absx(A); 
+    l = spdiags(sum(A_abs,2), [0], n, n) - A; 
+    r = min(r, n-2);
+    
+    [U D] = konect_eigl(l, r, opts);
+    sort(diag(D))'
+
+    % do V = pinv(U)' it using the economic full SVD
+    [uu dd vv] = svd(U, 'econ');
+    V = uu * pinv(dd) * vv'; 
+
+    U = konect_connect_back(cc, U); 
+    
   case 'lapherm'
 
     if format ~= consts.ASYM, error('*** Only applies to directed networks'); end; 

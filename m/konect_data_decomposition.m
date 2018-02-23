@@ -9,7 +9,7 @@
 %	format		(optional) Only used for the names ; default to ASYM
 %
 
-function [data_decomposition] = konect_data_decomposition(decomposition, format)
+function [data_decomposition colors_decomposition] = konect_data_decomposition(decomposition, format)
 
 consts = konect_consts(); 
 
@@ -122,4 +122,14 @@ data_decomposition.real = ...
 ~ (strcmp(decomposition, 'diag') | strcmp(decomposition, 'diag-n') | ...
    strcmp(decomposition, 'stoch2') | strcmp(decomposition, 'stoch') | ...
    strcmp(decomposition, 'mskew'));
+
+%
+% Colors
+%
+
+colors_decomposition = struct();
+
+colors_decomposition.sym   = [1  0  0];
+colors_decomposition.sym_n = [0  0  1];
+colors_decomposition.lap   = [0  1  0];
 
