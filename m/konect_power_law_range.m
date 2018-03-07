@@ -66,10 +66,13 @@ end
 range = [ 1.001 : 0.01 : 9 ]; 
 
 [gamma, xmin, L] = plfit(degrees, 'range', range)
+xmin = full(xmin) 
 
 values = [gamma xmin L]';  
 
 if enable_p
-    [p, gof] = plpva(degrees, xmin, 'range', range)
-    values = [ values ; p ; gof ]; 
+  xmin
+  %%  degrees = full(degrees); 
+  [p, gof] = plpva(degrees, xmin, 'range', range)
+  values = [ values ; p ; gof ]; 
 end
