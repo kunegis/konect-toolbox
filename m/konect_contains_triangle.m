@@ -1,24 +1,23 @@
 %
-% The number of triangles in a graph.
+% Determine whether a given graph contains at least one triangle.  This
+% function uses the same algorithm and implementation as
+% konect_statistic_triangles(), but aborts on finding the first
+% triangle.  Refer to that function for documentation.
 %
-% The computed number of triangles is independent of the orientation
-% of edges.  The multiplicity of edges is ignored.  Loops in 
-% graph are ignored.
+% This function uses a timer in the same way as
+% konect_statistic_triangles(), whose iteration is aborted as soon as a
+% triangle is found. 
 %
 % PARAMETERS 
 %	A	Adjacency matrix
 %	format
 %	weights
-%	opts	(optional, unused)
 %
 % RESULT 
-%	values 	Columns vector of results
-%		[1] Number of triangles
-%
-% GROUP:  square 
+%	ret	(0/1) Whether the given graph contains at least one triangle
 %
 
-function values = konect_statistic_triangles(A, format, weights, opts)
+function ret = konect_contains_triangle(A, format, weights)
 
 % Size in double variables of the largest number of doubles that is to
 % be used as temporary memory.  Used in the calculation of the default
@@ -27,8 +26,9 @@ size_resident = 1e7;
 
 consts = konect_consts(); 
 
-if ~(format == consts.SYM | format == consts.ASYM) 
-    error '*** Number of triangles is trivially zero for bipartite networks'; 
+if ~(format == consts.SYM | format == consts.ASYM)
+  ret = 0;
+  error('*** Expected graph to be unipartite'); 
 end
 
 n = size(A, 1); 
@@ -44,10 +44,6 @@ A = double(A);
 % loops. 
 A = A - spdiags(diag(A), [0], n, n); 
 
-% Count all triangles as the sum of the diagonal entries of A^3.
-% This will count each triangle six times (3!). 
-count_total = 0; 
-
 size_chunk = floor(size_resident / n); 
 if size_chunk < 1, size_chunk = 1; end; 
 
@@ -55,21 +51,18 @@ if size_chunk < 1, size_chunk = 1; end;
 
 t = konect_timer(n); 
 
+ret = 0; 
+
 for j = 1 : k
 
     t = konect_timer_tick(t, to(j)); 
 
     count_j = sum(sum(A(:,from(j):to(j)) .* (A * A(:,from(j):to(j))), 1), 2); 
-    count_total = count_total + count_j;
 
+    if count_j ~= 0
+      ret = 1;
+      return; 
+    end
 end
 
 konect_timer_end(t); 
-
-count_reduced = count_total / 6; 
-
-if count_reduced ~= floor(count_reduced)
-    error '*** count not a multiple of 6';
-end
-
-values = count_reduced; 
