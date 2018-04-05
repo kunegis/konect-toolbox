@@ -1,6 +1,8 @@
 %
 % Names and related information for plots. 
 %
+% The labels are in the singular and in lower case. 
+%
 % In fields, dashes are replaced by double underscores and dots by
 % triple underscores.
 %
@@ -28,6 +30,8 @@ labels_plot.distr___sym__n		= 'spectral distribution of the normalized adjacency
 labels_plot.distr___lap			= 'spectral distribution of the Laplacian'; 
 labels_plot.hopdistr			= 'hop distribution'; 
 labels_plot.hopdistr_time___full	= 'temporal hop distribution'; 
+labels_plot.inter			= 'inter-event distribution';
+labels_plot.inter2			= 'node-level inter-event distribution';
 labels_plot.layout			= 'Fruchterman–Reingold graph drawing';
 labels_plot.lorenz			= 'Lorenz curve'; 
 labels_plot.lybl			= 'double Laplacian graph drawing';
@@ -58,11 +62,6 @@ labels_plot.delaunay___a		= 'Delaunay graph drawing (double)';
 labels_plot.delaunay___b		= 'Delaunay graph drawing (single)'; 
 labels_plot.delaunay___f		= 'Delaunay graph drawing with spring layout';
 labels_plot.delaunay___g		= 'Delaunay graph drawing (uniformized) '; 
-labels_plot.lorenz___a			= 'overall Lorenz curve';
-labels_plot.lorenz___u			= 'left/outdegree Lorenz curve';
-labels_plot.lorenz___v			= 'right/indegree Lorenz curve';
-labels_plot.lybl___a			= 'double Laplacian graph drawing (plain)';
-labels_plot.lybl___b			= 'double Laplacian graph drawing (with clustering)'; 
 labels_plot.hopdistr___a		= 'hop distribution (unscaled)';
 labels_plot.hopdistr___b		= 'hop distribution (logistic scale)';
 labels_plot.hopdistr___c		= 'hop distribution (Cauchy scale)'; 
@@ -73,6 +72,14 @@ labels_plot.hopdistr___g		= 'hop distribution (exponential scale)';
 labels_plot.hopdistr_time___full___a	= 'temporal hop distribution (by vertex pairs)';
 labels_plot.hopdistr_time___full___b	= 'temporal hop distribution (by reachable vertices)'; 
 labels_plot.hopdistr_time___full___c	= 'temporal hop distribution (relative)'; 
+labels_plot.inter2___a			= 'overall node-level inter-event distribution';
+labels_plot.inter2___u			= 'left/outdegree node-level inter-event distribution';
+labels_plot.inter2___v			= 'right/indegree node-level inter-event distribution';
+labels_plot.lorenz___a			= 'overall Lorenz curve';
+labels_plot.lorenz___u			= 'left/outdegree Lorenz curve';
+labels_plot.lorenz___v			= 'right/indegree Lorenz curve';
+labels_plot.lybl___a			= 'double Laplacian graph drawing (plain)';
+labels_plot.lybl___b			= 'double Laplacian graph drawing (with clustering)'; 
 labels_plot.outin___a			= 'in/outdegree scatter plot (linear scale)';
 labels_plot.outin___b			= 'in/outdegree scatter plot (log-log scale)';
 labels_plot.outin___c			= 'in/outdegree scatter plot (log-log scale, augmented)';
