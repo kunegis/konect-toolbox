@@ -76,6 +76,7 @@ data_decomposition.o = ...
   strcmp(decomposition, 'dedicom3-0') | ...
   strcmp(decomposition, 'takane') | ...
   strcmp(decomposition, 'quantum') | ...
+  strcmp(decomposition, 'seidel') | ...
   (0 ~= length(regexp(decomposition, '^quantum[0-9]+$', 'start'))); 
 
 % Eigenvalues are purely imaginary (not used at the moment)
@@ -90,11 +91,13 @@ data_decomposition.imag = ...
 
 % Symbol for the decomposed matrix
 if strcmp(decomposition, 'lap')
-    data_decomposition.matrix = 'L';
+  data_decomposition.matrix = 'L';
 elseif strcmp(decomposition, 'sym-n')
-    data_decomposition.matrix = 'N';
+  data_decomposition.matrix = 'N';
+elseif strcmp(decomposition, 'seidel')
+  data_decomposition.matrix = 'W';
 else
-    data_decomposition.matrix = 'A'; 
+  data_decomposition.matrix = 'A'; 
 end
 
 %
@@ -132,4 +135,3 @@ colors_decomposition = struct();
 colors_decomposition.sym   = [1  0  0];
 colors_decomposition.sym_n = [0  0  1];
 colors_decomposition.lap   = [0  1  0];
-

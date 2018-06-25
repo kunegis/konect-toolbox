@@ -30,19 +30,6 @@
 % happens for decompositions that only work with some R, e.g. the skew
 % decomposition needs an even R. 
 %
-% RESULT 
-%	U		(n1*r) The eigenvectors or equivalent (the
-%			interpretation depends on the decomposition.)
-%			Dominant latent dimensions are returned first.  
-%	D		(r*r) The "eigenvalues", or equivalent. 
-%	V		(n2*r) The right eigenvectors.  May be [] to denote
-%			that it is equal to U. 
-%	d_u, d_v	Decomposition factors as returned by
-%			normalize(); may be []. 
-%	n		Number of nodes considered in the decomposition
-%			(e.g., when it is only computed on the largest
-%			connected component)
-%
 % PARAMETERS 
 %	decomposition	Decomposition type; in addition to all
 %			decomposition as described in the Handbook,
@@ -57,6 +44,19 @@
 %	weights		(optional) How to interpret values in A; default is POSITIVE
 %	opts		(optional) Options; all are optional
 %	.disp		Passed directly to eigs() and svds() 
+%
+% RESULT 
+%	U		(n1*r) The eigenvectors or equivalent (the
+%			interpretation depends on the decomposition.)
+%			Dominant latent dimensions are returned first.  
+%	D		(r*r) The "eigenvalues", or equivalent. 
+%	V		(n2*r) The right eigenvectors.  May be [] to denote
+%			that it is equal to U. 
+%	d_u, d_v	Decomposition factors as returned by
+%			normalize(); may be []. 
+%	n		Number of nodes considered in the decomposition
+%			(e.g., when it is only computed on the largest
+%			connected component)
 %
 
 function [U D V d_u d_v n] = konect_decomposition(decomposition, A, r, format, weights, opts)
@@ -123,15 +123,9 @@ end
 switch decomposition
 
   case 'sym'
-
-    % The eigenvalue decomposition of the underlying undirected
-    % network. 
-
     if format ~= consts.BIP
         r = min(r, size(A,1)); 
-
         [U D] = eigs(@(x)(A * x + A' * x), size(A, 1), r, 'lm', opts); 
-
         % eigs returns the decomposition ordered by decreasing eigenvalue.
         % Change it to be ordered by decreasing absolute eigenvalue. 
         [x i] = sort(-abs(diag(D)));
@@ -736,25 +730,18 @@ switch decomposition
     end
 
   case 'symc'
-
     % Like 'sym', but apply only to the network's largest connected
     % component
-    
     if format ~= consts.BIP
-
-        [A cc n] = konect_connect_matrix_square(A);
-        r = min(r, size(A,1)); 
-
-        [U D] = eigs(@(x)(A * x + A' * x), n, r, 'lm', opts); 
-
-        % eigs returns the decomposition ordered by decreasing eigenvalue.
-        % Change it to be ordered by decreasing absolute eigenvalue. 
-        [x i] = sort(-abs(diag(D)));
-        U = U(:,i);
-        D = D(i,i); 
-
-        U = konect_connect_back(cc, U); 
-        
+      [A cc n] = konect_connect_matrix_square(A);
+      r = min(r, size(A,1));
+      [U D] = eigs(@(x)(A * x + A' * x), n, r, 'lm', opts); 
+      % eigs returns the decomposition ordered by decreasing eigenvalue.
+      % Change it to be ordered by decreasing absolute eigenvalue. 
+      [x i] = sort(-abs(diag(D)));
+      U = U(:,i);
+      D = D(i,i); 
+      U = konect_connect_back(cc, U); 
     else % BIP
         [A cc1 cc2 n] = konect_connect_matrix_bipartite(A); 
         r = min(r, size(A,1)-2);     
@@ -763,6 +750,34 @@ switch decomposition
         V = konect_connect_back(cc2, V); 
     end
 
+  case 'seidel'
+    if format == consts.SYM | format == consts.ASYM
+      r = min(r, size(A,1));
+      A = 2 * A; 
+      [U D] = eigs(@(x)(sum(x) * ones(n,1) - x - A * x - A' * x), n, r, 'lm', opts); 
+      % eigs returns the decomposition ordered by decreasing eigenvalue.
+      % Change it to be ordered by decreasing absolute eigenvalue. 
+      [x i] = sort(-abs(diag(D)));
+      U = U(:,i);
+      D = D(i,i); 
+    elseif format == consts.BIP
+      [mm nn] = size(A); 
+      A = konect_matrix('bip', A); 
+      size_A = size(A)
+      n = mm + nn
+      r = min(r, size(A,1))
+      A = 2 * A; 
+      [U D] = eigs(@(x)(sum(x) * ones(n,1) - x - A * x - A' * x), n, r, 'lm', opts); 
+      % eigs returns the decomposition ordered by decreasing eigenvalue.
+      % Change it to be ordered by decreasing absolute eigenvalue. 
+      [x i] = sort(-abs(diag(D)));
+      V = U(mm+1:end, i);
+      U = U(1:mm,     i);
+      D = D(i,i);
+    else
+      error('*** Invalid format'); 
+    end
+    
 otherwise
     error(sprintf('*** Invalid decomposition type %s', decomposition)); 
 end
