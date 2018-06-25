@@ -106,6 +106,7 @@ elseif strcmp(statistic, 'coco+6')		ret = 'Relative size of right LCC';
 elseif strcmp(statistic, 'cocos')		ret = 'Size of LSCC ($N_s$) [vertices]';
 elseif strcmp(statistic, 'cocos+2')		ret = 'Relative size of LSCC ($N^{r}_{s}$)';
 elseif strcmp(statistic, 'snorm')		ret = 'Spectral norm ($\alpha$)'; 
+elseif strcmp(statistic, 'seidelnorm')		ret = 'Seidel norm ($\alpha_W$)';
 elseif strcmp(statistic, 'separation')		ret = 'Spectral separation ($|\lambda_1[A] / \lambda_2[A]|$)';
 elseif strcmp(statistic, 'separationl')		ret = 'Laplacian spectral separation ($\lambda_3[L] / \lambda_2[L]$)';
 elseif strcmp(statistic, 'gini')		ret = 'Gini coefficient ($G$)'; 
