@@ -22,7 +22,7 @@
 %	Q = [ U + iV ; U - iV ] / sqrt(2),
 %	L = [ iD, 0 ; 0, -iD ].
 %
-% Another feature of that decomposition is that a rank of floor(n/2)
+% Another feature of this decomposition is that a rank of floor(n/2)
 % is enough to decompose all matrices exactly.  I.e., when B has size
 % n*n, then there is always a r <= floor(n/2) such that an exact
 % decomposition exists in which U and V have size n*r and D has size

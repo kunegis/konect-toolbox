@@ -1,17 +1,10 @@
 == KONECT Toolbox ==
 
 This is a toolbox for the analysis of large complex networks written in
-Matlab, but also largely compatible with GNU Octave.  It is part of the
-KONECT project by Jérôme Kunegis at the University of Namur, Belgium:
+Matlab, but also largely compatible with GNU Octave.  It is used by the KONECT
+Project:
 
 http://konect.cc/
-
-This toolbox implements individual network analysis functions,
-statistics and some machine learning methods.  If you want a complete
-"run all analyses on this network" package, use the KONECT Analysis
-package:
-
-https://github.com/kunegis/konect-analysis
 
 This toolbox largely implements the graph analysis functions described in 
 the KONECT Handbook: 
