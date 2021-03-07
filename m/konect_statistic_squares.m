@@ -2,7 +2,7 @@
 % The number of squares in a graph.
 %
 % The computed number of squares is independent of the orientation
-% of edges.  The multiplicity of edges is ignored.  Loops in 
+% of edges.  The multiplicity of edges is ignored.  Loops in the
 % graph are ignored.  
 %
 % PARAMETERS 
