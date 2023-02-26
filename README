@@ -58,20 +58,19 @@ The functions are used from both GNU Octave Matlab and Matlab.  Since none of
 these is properly standardised, we can't assure that all versions will
 work -- when in doubt, ask. 
 
-If you fix bugs or add new features, please contact Jérôme Kunegis
-<jerome.kunegis@unamur.be> so we can merge your changes into the master
-version.
+If you fix bugs or add new features, please contact <konectproject@outlook.com>
+so we can merge your changes into the master version.
 
 === Help ===
 
-For support, write to Jérôme Kunegis <jerome.kunegis@unamur.be>, or
-directly write a ticket on GitHub: 
+For support, write to <konectproject@outlook.com>, or directly write a ticket on
+GitHub:  
 
 https://github.com/kunegis/konect-toolbox
 
 === License ===
 
-Written by Jérôme Kunegis at the University of Namur, Belgium.
+Written by Jérôme Kunegis.
 
 The KONECT Toolbox is free software, and therefore you can easily use it
 in your project.  You can either tell your users that they have to
